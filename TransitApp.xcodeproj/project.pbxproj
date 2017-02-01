@@ -13,6 +13,7 @@
 		281C0C1B1E4279760006F9C0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 281C0C1A1E4279760006F9C0 /* Assets.xcassets */; };
 		281C0C1E1E4279760006F9C0 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 281C0C1C1E4279760006F9C0 /* LaunchScreen.storyboard */; };
 		281C0C291E4279760006F9C0 /* TransitAppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 281C0C281E4279760006F9C0 /* TransitAppTests.swift */; };
+		FCCC468D8D65C103815E18CB /* Pods_TransitApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 130B0B1465AFA00AE7D09EEA /* Pods_TransitApp.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -26,6 +27,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		130B0B1465AFA00AE7D09EEA /* Pods_TransitApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TransitApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		281C0C101E4279760006F9C0 /* TransitApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TransitApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		281C0C131E4279760006F9C0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		281C0C151E4279760006F9C0 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -36,6 +38,8 @@
 		281C0C241E4279760006F9C0 /* TransitAppTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TransitAppTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		281C0C281E4279760006F9C0 /* TransitAppTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransitAppTests.swift; sourceTree = "<group>"; };
 		281C0C2A1E4279760006F9C0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		4F43FEADED1C77C814CDF7A9 /* Pods-TransitApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TransitApp.debug.xcconfig"; path = "Pods/Target Support Files/Pods-TransitApp/Pods-TransitApp.debug.xcconfig"; sourceTree = "<group>"; };
+		D34749BA02E0974111D31C55 /* Pods-TransitApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TransitApp.release.xcconfig"; path = "Pods/Target Support Files/Pods-TransitApp/Pods-TransitApp.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -43,6 +47,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FCCC468D8D65C103815E18CB /* Pods_TransitApp.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -62,6 +67,8 @@
 				281C0C121E4279760006F9C0 /* TransitApp */,
 				281C0C271E4279760006F9C0 /* TransitAppTests */,
 				281C0C111E4279760006F9C0 /* Products */,
+				E92B8A738ECE6DB73995D521 /* Pods */,
+				4F9B29068019CF513169A27F /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -96,6 +103,23 @@
 			path = TransitAppTests;
 			sourceTree = "<group>";
 		};
+		4F9B29068019CF513169A27F /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				130B0B1465AFA00AE7D09EEA /* Pods_TransitApp.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		E92B8A738ECE6DB73995D521 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				4F43FEADED1C77C814CDF7A9 /* Pods-TransitApp.debug.xcconfig */,
+				D34749BA02E0974111D31C55 /* Pods-TransitApp.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -103,9 +127,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 281C0C2D1E4279760006F9C0 /* Build configuration list for PBXNativeTarget "TransitApp" */;
 			buildPhases = (
+				E6199E6346E400AB9137F0D2 /* [CP] Check Pods Manifest.lock */,
 				281C0C0C1E4279760006F9C0 /* Sources */,
 				281C0C0D1E4279760006F9C0 /* Frameworks */,
 				281C0C0E1E4279760006F9C0 /* Resources */,
+				28D9DD6E4A17B741C4549D3F /* [CP] Embed Pods Frameworks */,
+				580952A0F87464EB6416527A /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -195,6 +222,54 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		28D9DD6E4A17B741C4549D3F /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-TransitApp/Pods-TransitApp-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		580952A0F87464EB6416527A /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-TransitApp/Pods-TransitApp-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		E6199E6346E400AB9137F0D2 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		281C0C0C1E4279760006F9C0 /* Sources */ = {
@@ -339,6 +414,7 @@
 		};
 		281C0C2E1E4279760006F9C0 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 4F43FEADED1C77C814CDF7A9 /* Pods-TransitApp.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = WEUMM3X4MB;
@@ -352,6 +428,7 @@
 		};
 		281C0C2F1E4279760006F9C0 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = D34749BA02E0974111D31C55 /* Pods-TransitApp.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = WEUMM3X4MB;
