@@ -51,13 +51,23 @@ class TADestinationSelectionViewController		: UIViewController {
 
 	@IBOutlet private weak var tableView		: UITableView?
 
+	// MARK: - Properties
+
+	var showDateSelectionViewBlock				: ((_ show: Bool) -> Void)?
+
 	// MARK: - View life cycle
 
 	override func viewDidLoad() {
 		super.viewDidLoad()
 
 		self.tableView?.isScrollEnabled = false
-		self.tableView?.register(UINib(nibName: NibNames.DestinationSelectionCell, bundle: nil), forCellReuseIdentifier: CellIdentifiers.StartSelection)
+		self.tableView?.register(UINib(nibName: NibNames.DestinationSelectionCell, bundle: nil), forCellReuseIdentifier: CellIdentifiers.startSelection.rawValue)
+	}
+
+	// MARK: - Selection Time Picker View Methods
+
+	fileprivate func showDateSelectionView() {
+		self.showDateSelectionViewBlock?(true)
 	}
 }
 
@@ -71,12 +81,12 @@ extension TADestinationSelectionViewController	: UITableViewDelegate, UITableVie
 
 	func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
 		guard
-			let cell = tableView.dequeueReusableCell(withIdentifier: CellIdentifiers.StartSelection) as? TADestinationSelectionCell,
+			let cell = tableView.dequeueReusableCell(withIdentifier: CellIdentifiers.startSelection.rawValue) as? TADestinationSelectionCell,
 			let destinationSelectionOption = DestinationSelectionOption(rawValue: indexPath.row) else {
 				return UITableViewCell()
 		}
 
-		cell.setupCell(selectionOptionType: destinationSelectionOption)
+		cell.setupCell(selectionOptionType: destinationSelectionOption, showDateSelectionBlock: self.showDateSelectionView)
 		return cell
 	}
 

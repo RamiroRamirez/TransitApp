@@ -18,11 +18,29 @@ class TADestinationSelectionCell				: UITableViewCell {
 	// MARK: - Properties
 
 	var selectionOptionType						: DestinationSelectionOption = .start
+	var showDateSelectionBlock					: (() -> Void)?
 
-	func setupCell(selectionOptionType: DestinationSelectionOption) {
+	func setupCell(selectionOptionType: DestinationSelectionOption, showDateSelectionBlock: (() -> Void)?) {
 
 		self.selectionStyle = .none
 		self.titleLabel?.text = selectionOptionType.title()
 		self.inputTextField?.placeholder = selectionOptionType.placeholder()
+		self.inputTextField?.text = selectionOptionType.text()
+
+		self.showDateSelectionBlock = showDateSelectionBlock
+		self.selectionOptionType = selectionOptionType
+		self.inputTextField?.delegate = self
+	}
+}
+
+extension TADestinationSelectionCell			: UITextFieldDelegate {
+
+	func textFieldShouldBeginEditing(_ textField: UITextField) -> Bool {
+		guard (self.selectionOptionType != .time) else {
+			self.showDateSelectionBlock?()
+			return false
+		}
+
+		return true
 	}
 }

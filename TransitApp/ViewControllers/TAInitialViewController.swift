@@ -8,11 +8,13 @@
 
 import UIKit
 
-class TAInitialViewController							: UIViewController {
+class TAInitialViewController									: UIViewController {
 
 	// MARK: - Outlets
 
-	@IBOutlet private weak var destinationSelectionView	: UIView?
+	@IBOutlet private weak var destinationSelectionView			: UIView?
+	@IBOutlet private weak var datePickerViewBottomConstraint	: NSLayoutConstraint?
+	@IBOutlet private weak var datePickerViewHeightConstraint	: NSLayoutConstraint?
 
 	// MARK: - View Life Cycle
 
@@ -20,5 +22,38 @@ class TAInitialViewController							: UIViewController {
 		super.viewDidLoad()
 
 		self.destinationSelectionView?.alpha = AlphaForViews.DestinationSelectionView
+		self.addTapRecognizer()
+	}
+
+	// MARK: - Date Selection view Methods
+
+	fileprivate func addTapRecognizer() {
+		let tapRecognizer = UITapGestureRecognizer(target: self, action: #selector(hideDatePickerView(_:)))
+		self.view.addGestureRecognizer(tapRecognizer)
+	}
+
+	func hideDatePickerView(_ sender: UITapGestureRecognizer) {
+		self.showOrHideDateSelectionView(show: false)
+	}
+
+	fileprivate func showOrHideDateSelectionView(show: Bool) {
+		let bottomConstraintToHide = ((self.datePickerViewHeightConstraint?.constant ?? 0)) * CGFloat(-1)
+		self.datePickerViewBottomConstraint?.constant = ((show == true) ? 0 : bottomConstraintToHide)
+		UIView.animate(withDuration: 0.3) {
+			self.view.layoutIfNeeded()
+		}
+	}
+
+	// MARK: - Navigation
+
+	override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+		if (segue.identifier == SegueIdentifiers.toDestinationSelectionViewController.rawValue),
+			let destinationSelectionViewController = segue.destination as? TADestinationSelectionViewController {
+				destinationSelectionViewController.showDateSelectionViewBlock = self.showOrHideDateSelectionView
+
+		} else if (segue.identifier == SegueIdentifiers.toDateSelectionViewController.rawValue),
+			let dateSelectionViewController = segue.destination as? TADatePickerViewController {
+				dateSelectionViewController.closeDatePickerViewBlock = self.showOrHideDateSelectionView
+		}
 	}
 }
