@@ -8,11 +8,13 @@
 
 /* Begin PBXBuildFile section */
 		281C0C141E4279760006F9C0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 281C0C131E4279760006F9C0 /* AppDelegate.swift */; };
-		281C0C161E4279760006F9C0 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 281C0C151E4279760006F9C0 /* ViewController.swift */; };
-		281C0C191E4279760006F9C0 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 281C0C171E4279760006F9C0 /* Main.storyboard */; };
-		281C0C1B1E4279760006F9C0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 281C0C1A1E4279760006F9C0 /* Assets.xcassets */; };
-		281C0C1E1E4279760006F9C0 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 281C0C1C1E4279760006F9C0 /* LaunchScreen.storyboard */; };
 		281C0C291E4279760006F9C0 /* TransitAppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 281C0C281E4279760006F9C0 /* TransitAppTests.swift */; };
+		281C0C3A1E42A5B80006F9C0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 281C0C371E42A5B80006F9C0 /* Assets.xcassets */; };
+		281C0C3B1E42A5B80006F9C0 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 281C0C381E42A5B80006F9C0 /* LaunchScreen.storyboard */; };
+		281C0C3C1E42A5B80006F9C0 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 281C0C391E42A5B80006F9C0 /* Main.storyboard */; };
+		281C0C3E1E42A7880006F9C0 /* DestinationSelection.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 281C0C3D1E42A7880006F9C0 /* DestinationSelection.storyboard */; };
+		281C0C401E42A9790006F9C0 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 281C0C3F1E42A9790006F9C0 /* MapKit.framework */; };
+		281C0C421E42AD100006F9C0 /* DateSelection.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 281C0C411E42AD100006F9C0 /* DateSelection.storyboard */; };
 		FCCC468D8D65C103815E18CB /* Pods_TransitApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 130B0B1465AFA00AE7D09EEA /* Pods_TransitApp.framework */; };
 /* End PBXBuildFile section */
 
@@ -30,14 +32,16 @@
 		130B0B1465AFA00AE7D09EEA /* Pods_TransitApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TransitApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		281C0C101E4279760006F9C0 /* TransitApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TransitApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		281C0C131E4279760006F9C0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		281C0C151E4279760006F9C0 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		281C0C181E4279760006F9C0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		281C0C1A1E4279760006F9C0 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		281C0C1D1E4279760006F9C0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		281C0C1F1E4279760006F9C0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		281C0C241E4279760006F9C0 /* TransitAppTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TransitAppTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		281C0C281E4279760006F9C0 /* TransitAppTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransitAppTests.swift; sourceTree = "<group>"; };
 		281C0C2A1E4279760006F9C0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		281C0C371E42A5B80006F9C0 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		281C0C381E42A5B80006F9C0 /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
+		281C0C391E42A5B80006F9C0 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
+		281C0C3D1E42A7880006F9C0 /* DestinationSelection.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = DestinationSelection.storyboard; sourceTree = "<group>"; };
+		281C0C3F1E42A9790006F9C0 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
+		281C0C411E42AD100006F9C0 /* DateSelection.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = DateSelection.storyboard; sourceTree = "<group>"; };
 		4F43FEADED1C77C814CDF7A9 /* Pods-TransitApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TransitApp.debug.xcconfig"; path = "Pods/Target Support Files/Pods-TransitApp/Pods-TransitApp.debug.xcconfig"; sourceTree = "<group>"; };
 		D34749BA02E0974111D31C55 /* Pods-TransitApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TransitApp.release.xcconfig"; path = "Pods/Target Support Files/Pods-TransitApp/Pods-TransitApp.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -47,6 +51,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				281C0C401E42A9790006F9C0 /* MapKit.framework in Frameworks */,
 				FCCC468D8D65C103815E18CB /* Pods_TransitApp.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -84,11 +89,11 @@
 		281C0C121E4279760006F9C0 /* TransitApp */ = {
 			isa = PBXGroup;
 			children = (
+				281C0C331E42A5640006F9C0 /* AdditionalViews */,
+				281C0C341E42A5640006F9C0 /* Helpers */,
+				281C0C351E42A5640006F9C0 /* ViewControllers */,
+				281C0C361E42A5B80006F9C0 /* Resources */,
 				281C0C131E4279760006F9C0 /* AppDelegate.swift */,
-				281C0C151E4279760006F9C0 /* ViewController.swift */,
-				281C0C171E4279760006F9C0 /* Main.storyboard */,
-				281C0C1A1E4279760006F9C0 /* Assets.xcassets */,
-				281C0C1C1E4279760006F9C0 /* LaunchScreen.storyboard */,
 				281C0C1F1E4279760006F9C0 /* Info.plist */,
 			);
 			path = TransitApp;
@@ -103,9 +108,43 @@
 			path = TransitAppTests;
 			sourceTree = "<group>";
 		};
+		281C0C331E42A5640006F9C0 /* AdditionalViews */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = AdditionalViews;
+			sourceTree = "<group>";
+		};
+		281C0C341E42A5640006F9C0 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Helpers;
+			sourceTree = "<group>";
+		};
+		281C0C351E42A5640006F9C0 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		281C0C361E42A5B80006F9C0 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				281C0C371E42A5B80006F9C0 /* Assets.xcassets */,
+				281C0C381E42A5B80006F9C0 /* LaunchScreen.storyboard */,
+				281C0C391E42A5B80006F9C0 /* Main.storyboard */,
+				281C0C3D1E42A7880006F9C0 /* DestinationSelection.storyboard */,
+				281C0C411E42AD100006F9C0 /* DateSelection.storyboard */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
 		4F9B29068019CF513169A27F /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				281C0C3F1E42A9790006F9C0 /* MapKit.framework */,
 				130B0B1465AFA00AE7D09EEA /* Pods_TransitApp.framework */,
 			);
 			name = Frameworks;
@@ -208,9 +247,11 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				281C0C1E1E4279760006F9C0 /* LaunchScreen.storyboard in Resources */,
-				281C0C1B1E4279760006F9C0 /* Assets.xcassets in Resources */,
-				281C0C191E4279760006F9C0 /* Main.storyboard in Resources */,
+				281C0C3C1E42A5B80006F9C0 /* Main.storyboard in Resources */,
+				281C0C3E1E42A7880006F9C0 /* DestinationSelection.storyboard in Resources */,
+				281C0C3A1E42A5B80006F9C0 /* Assets.xcassets in Resources */,
+				281C0C3B1E42A5B80006F9C0 /* LaunchScreen.storyboard in Resources */,
+				281C0C421E42AD100006F9C0 /* DateSelection.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -276,7 +317,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				281C0C161E4279760006F9C0 /* ViewController.swift in Sources */,
 				281C0C141E4279760006F9C0 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -298,25 +338,6 @@
 			targetProxy = 281C0C251E4279760006F9C0 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
-
-/* Begin PBXVariantGroup section */
-		281C0C171E4279760006F9C0 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				281C0C181E4279760006F9C0 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
-		281C0C1C1E4279760006F9C0 /* LaunchScreen.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				281C0C1D1E4279760006F9C0 /* Base */,
-			);
-			name = LaunchScreen.storyboard;
-			sourceTree = "<group>";
-		};
-/* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
 		281C0C2B1E4279760006F9C0 /* Debug */ = {
@@ -489,6 +510,7 @@
 				281C0C2F1E4279760006F9C0 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		281C0C301E4279760006F9C0 /* Build configuration list for PBXNativeTarget "TransitAppTests" */ = {
 			isa = XCConfigurationList;
@@ -497,6 +519,7 @@
 				281C0C321E4279760006F9C0 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
