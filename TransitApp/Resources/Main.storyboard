@@ -42,7 +42,7 @@
                                 <rect key="frame" x="0.0" y="64" width="375" height="603"/>
                             </mapView>
                             <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Jah-vB-LUb">
-                                <rect key="frame" x="0.0" y="64" width="375" height="150"/>
+                                <rect key="frame" x="10" y="74" width="355" height="150"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="150" id="TWd-Xd-1nH"/>
                                 </constraints>
@@ -64,11 +64,11 @@
                         <constraints>
                             <constraint firstItem="Xi1-Nh-qOB" firstAttribute="leading" secondItem="s5Y-LR-yqv" secondAttribute="leading" id="B7F-1g-q6z"/>
                             <constraint firstItem="dLc-wQ-Tna" firstAttribute="top" secondItem="Xi1-Nh-qOB" secondAttribute="bottom" constant="-250" id="Mde-Kz-1T9"/>
-                            <constraint firstAttribute="trailing" secondItem="Jah-vB-LUb" secondAttribute="trailing" id="NQ8-Qt-NcR"/>
+                            <constraint firstAttribute="trailing" secondItem="Jah-vB-LUb" secondAttribute="trailing" constant="10" id="NQ8-Qt-NcR"/>
                             <constraint firstAttribute="trailing" secondItem="Xi1-Nh-qOB" secondAttribute="trailing" id="TP8-Fc-oop"/>
                             <constraint firstItem="v6x-4v-bR7" firstAttribute="leading" secondItem="s5Y-LR-yqv" secondAttribute="leading" id="YJm-ii-2sT"/>
-                            <constraint firstItem="Jah-vB-LUb" firstAttribute="top" secondItem="R53-ki-REX" secondAttribute="bottom" id="bl9-e3-b5n"/>
-                            <constraint firstItem="Jah-vB-LUb" firstAttribute="leading" secondItem="s5Y-LR-yqv" secondAttribute="leading" id="jXM-Iw-MRu"/>
+                            <constraint firstItem="Jah-vB-LUb" firstAttribute="top" secondItem="R53-ki-REX" secondAttribute="bottom" constant="10" id="bl9-e3-b5n"/>
+                            <constraint firstItem="Jah-vB-LUb" firstAttribute="leading" secondItem="s5Y-LR-yqv" secondAttribute="leading" constant="10" id="jXM-Iw-MRu"/>
                             <constraint firstItem="v6x-4v-bR7" firstAttribute="top" secondItem="R53-ki-REX" secondAttribute="bottom" id="oXB-eF-BO1"/>
                             <constraint firstItem="dLc-wQ-Tna" firstAttribute="top" secondItem="v6x-4v-bR7" secondAttribute="bottom" id="sn9-Yf-FJV"/>
                             <constraint firstAttribute="trailing" secondItem="v6x-4v-bR7" secondAttribute="trailing" id="x6P-Ti-Dsp"/>
