@@ -21,6 +21,7 @@ class TADestinationSelectionCell				: UITableViewCell {
 
 	func setupCell(selectionOptionType: DestinationSelectionOption) {
 
+		self.selectionStyle = .none
 		self.titleLabel?.text = selectionOptionType.title()
 		self.inputTextField?.placeholder = selectionOptionType.placeholder()
 	}
