@@ -13,9 +13,10 @@
         <scene sceneID="1ha-iU-zge">
             <objects>
                 <navigationController id="MEQ-xj-P7n" sceneMemberID="viewController">
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="UY0-vp-icz">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="UY0-vp-icz">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <color key="barTintColor" red="0.035294117649999998" green="0.29411764709999999" blue="0.59215686270000001" alpha="1" colorSpace="calibratedRGB"/>
                     </navigationBar>
                     <connections>
                         <segue destination="qd8-az-gce" kind="relationship" relationship="rootViewController" id="ye6-yG-4BN"/>
@@ -25,10 +26,10 @@
             </objects>
             <point key="canvasLocation" x="1" y="114"/>
         </scene>
-        <!--View Controller-->
+        <!--Initial View Controller-->
         <scene sceneID="FXx-nL-W9t">
             <objects>
-                <viewController id="qd8-az-gce" sceneMemberID="viewController">
+                <viewController id="qd8-az-gce" customClass="TAInitialViewController" customModule="TransitApp" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="R53-ki-REX"/>
                         <viewControllerLayoutGuide type="bottom" id="dLc-wQ-Tna"/>
@@ -74,6 +75,9 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="vHm-wV-iZx"/>
+                    <connections>
+                        <outlet property="destinationSelectionView" destination="Jah-vB-LUb" id="3hA-QD-68x"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="OMo-9H-ftw" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

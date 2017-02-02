@@ -28,6 +28,14 @@ enum DestinationSelectionOption	: Int {
 		}
 	}
 
+	func text() -> String? {
+		switch self {
+		case .start				: return "Your location"
+		case .end				: return nil
+		case .time				: return nil
+		}
+	}
+
 	func placeholder() -> String? {
 		switch self {
 		case .start				: return nil
@@ -47,7 +55,9 @@ class TADestinationSelectionViewController		: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+
 		self.tableView?.isScrollEnabled = false
+		self.tableView?.register(UINib(nibName: NibNames.DestinationSelectionCell, bundle: nil), forCellReuseIdentifier: CellIdentifiers.StartSelection)
 
     }
 }
@@ -61,10 +71,19 @@ extension TADestinationSelectionViewController	: UITableViewDelegate, UITableVie
 	}
 
 	func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-		return UITableViewCell()
+		guard let cell = tableView.dequeueReusableCell(withIdentifier: CellIdentifiers.StartSelection) as? TADestinationSelectionCell else {
+			return UITableViewCell()
+		}
+
+		guard let destinationSelectionOption = DestinationSelectionOption(rawValue: indexPath.row) else {
+			return UITableViewCell()
+		}
+
+		cell.setupCell(selectionOptionType: destinationSelectionOption)
+		return cell
 	}
 
 	func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-		return CellHeights.DestinationSelectionCellHeight
+		return CellHeights.DestinationSelection
 	}
 }

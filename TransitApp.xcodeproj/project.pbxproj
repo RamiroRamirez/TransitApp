@@ -17,6 +17,9 @@
 		281C0C421E42AD100006F9C0 /* DateSelection.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 281C0C411E42AD100006F9C0 /* DateSelection.storyboard */; };
 		281C0C441E42B0CB0006F9C0 /* TADestinationSelectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 281C0C431E42B0CB0006F9C0 /* TADestinationSelectionViewController.swift */; };
 		281C0C461E42B4F30006F9C0 /* TAConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 281C0C451E42B4F30006F9C0 /* TAConstants.swift */; };
+		281C0C4E1E42B6AA0006F9C0 /* TADestinationSelectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 281C0C4C1E42B6AA0006F9C0 /* TADestinationSelectionCell.swift */; };
+		281C0C4F1E42B6AA0006F9C0 /* TADestinationSelectionCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 281C0C4D1E42B6AA0006F9C0 /* TADestinationSelectionCell.xib */; };
+		281C0C511E42BD2B0006F9C0 /* TAInitialViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 281C0C501E42BD2B0006F9C0 /* TAInitialViewController.swift */; };
 		FCCC468D8D65C103815E18CB /* Pods_TransitApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 130B0B1465AFA00AE7D09EEA /* Pods_TransitApp.framework */; };
 /* End PBXBuildFile section */
 
@@ -46,6 +49,9 @@
 		281C0C411E42AD100006F9C0 /* DateSelection.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = DateSelection.storyboard; sourceTree = "<group>"; };
 		281C0C431E42B0CB0006F9C0 /* TADestinationSelectionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TADestinationSelectionViewController.swift; sourceTree = "<group>"; };
 		281C0C451E42B4F30006F9C0 /* TAConstants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TAConstants.swift; sourceTree = "<group>"; };
+		281C0C4C1E42B6AA0006F9C0 /* TADestinationSelectionCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TADestinationSelectionCell.swift; sourceTree = "<group>"; };
+		281C0C4D1E42B6AA0006F9C0 /* TADestinationSelectionCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TADestinationSelectionCell.xib; sourceTree = "<group>"; };
+		281C0C501E42BD2B0006F9C0 /* TAInitialViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TAInitialViewController.swift; sourceTree = "<group>"; };
 		4F43FEADED1C77C814CDF7A9 /* Pods-TransitApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TransitApp.debug.xcconfig"; path = "Pods/Target Support Files/Pods-TransitApp/Pods-TransitApp.debug.xcconfig"; sourceTree = "<group>"; };
 		D34749BA02E0974111D31C55 /* Pods-TransitApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TransitApp.release.xcconfig"; path = "Pods/Target Support Files/Pods-TransitApp/Pods-TransitApp.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -115,6 +121,7 @@
 		281C0C331E42A5640006F9C0 /* AdditionalViews */ = {
 			isa = PBXGroup;
 			children = (
+				281C0C4B1E42B6AA0006F9C0 /* TADestinationSelectionCell */,
 			);
 			path = AdditionalViews;
 			sourceTree = "<group>";
@@ -131,6 +138,7 @@
 			isa = PBXGroup;
 			children = (
 				281C0C431E42B0CB0006F9C0 /* TADestinationSelectionViewController.swift */,
+				281C0C501E42BD2B0006F9C0 /* TAInitialViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -145,6 +153,15 @@
 				281C0C411E42AD100006F9C0 /* DateSelection.storyboard */,
 			);
 			path = Resources;
+			sourceTree = "<group>";
+		};
+		281C0C4B1E42B6AA0006F9C0 /* TADestinationSelectionCell */ = {
+			isa = PBXGroup;
+			children = (
+				281C0C4C1E42B6AA0006F9C0 /* TADestinationSelectionCell.swift */,
+				281C0C4D1E42B6AA0006F9C0 /* TADestinationSelectionCell.xib */,
+			);
+			path = TADestinationSelectionCell;
 			sourceTree = "<group>";
 		};
 		4F9B29068019CF513169A27F /* Frameworks */ = {
@@ -253,6 +270,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				281C0C4F1E42B6AA0006F9C0 /* TADestinationSelectionCell.xib in Resources */,
 				281C0C3C1E42A5B80006F9C0 /* Main.storyboard in Resources */,
 				281C0C3E1E42A7880006F9C0 /* DestinationSelection.storyboard in Resources */,
 				281C0C3A1E42A5B80006F9C0 /* Assets.xcassets in Resources */,
@@ -323,9 +341,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				281C0C4E1E42B6AA0006F9C0 /* TADestinationSelectionCell.swift in Sources */,
 				281C0C141E4279760006F9C0 /* AppDelegate.swift in Sources */,
 				281C0C441E42B0CB0006F9C0 /* TADestinationSelectionViewController.swift in Sources */,
 				281C0C461E42B4F30006F9C0 /* TAConstants.swift in Sources */,
+				281C0C511E42BD2B0006F9C0 /* TAInitialViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
