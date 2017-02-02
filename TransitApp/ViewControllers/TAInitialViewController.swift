@@ -17,8 +17,8 @@ class TAInitialViewController							: UIViewController {
 	// MARK: - View Life Cycle
 
 	override func viewDidLoad() {
-        super.viewDidLoad()
+		super.viewDidLoad()
 
 		self.destinationSelectionView?.alpha = AlphaForViews.DestinationSelectionView
-    }
+	}
 }

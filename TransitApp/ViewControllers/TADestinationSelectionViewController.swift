@@ -12,7 +12,7 @@ import UIKit
 
 enum DestinationSelectionOption	: Int {
 
-	case start
+	case start = 0
 	case end
 	case time
 
@@ -53,13 +53,12 @@ class TADestinationSelectionViewController		: UIViewController {
 
 	// MARK: - View life cycle
 
-    override func viewDidLoad() {
-        super.viewDidLoad()
+	override func viewDidLoad() {
+		super.viewDidLoad()
 
 		self.tableView?.isScrollEnabled = false
 		self.tableView?.register(UINib(nibName: NibNames.DestinationSelectionCell, bundle: nil), forCellReuseIdentifier: CellIdentifiers.StartSelection)
-
-    }
+	}
 }
 
 // MARK: - Table View methods
