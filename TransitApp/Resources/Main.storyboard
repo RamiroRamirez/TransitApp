@@ -41,9 +41,9 @@
                                 <rect key="frame" x="0.0" y="64" width="375" height="603"/>
                             </mapView>
                             <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Jah-vB-LUb">
-                                <rect key="frame" x="0.0" y="64" width="375" height="160"/>
+                                <rect key="frame" x="0.0" y="64" width="375" height="150"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="160" id="TWd-Xd-1nH"/>
+                                    <constraint firstAttribute="height" constant="150" id="TWd-Xd-1nH"/>
                                 </constraints>
                                 <connections>
                                     <segue destination="ryn-YB-VKa" kind="embed" id="Jpq-Vy-b64"/>
