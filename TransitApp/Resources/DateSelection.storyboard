@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16C67" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="ijr-uF-XHb">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="UL9-FE-lZW">
+            <objects>
+                <viewController storyboardIdentifier="TADatePickerViewController" id="ijr-uF-XHb" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="cVS-UP-cFh"/>
+                        <viewControllerLayoutGuide type="bottom" id="Umm-FY-aKM"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="KaA-8O-7iT">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vrb-La-5Ym">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="222.5"/>
+                                <subviews>
+                                    <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="Ksl-ye-wgZ">
+                                        <rect key="frame" x="127" y="97" width="121" height="29"/>
+                                        <segments>
+                                            <segment title="First"/>
+                                            <segment title="Second"/>
+                                        </segments>
+                                    </segmentedControl>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jOI-9N-Ew0">
+                                        <rect key="frame" x="20" y="96" width="46" height="30"/>
+                                        <state key="normal" title="Button"/>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="N7F-ad-faC">
+                                        <rect key="frame" x="309" y="97" width="46" height="30"/>
+                                        <state key="normal" title="Button"/>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ngV-Ac-hIl">
+                                        <rect key="frame" x="24" y="8" width="39" height="30"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <state key="normal" title="Close"/>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstItem="Ksl-ye-wgZ" firstAttribute="centerY" secondItem="vrb-La-5Ym" secondAttribute="centerY" id="2BC-Cj-Kpt"/>
+                                    <constraint firstAttribute="trailing" secondItem="N7F-ad-faC" secondAttribute="trailing" constant="20" id="FiA-Rx-RKe"/>
+                                    <constraint firstItem="Ksl-ye-wgZ" firstAttribute="centerX" secondItem="vrb-La-5Ym" secondAttribute="centerX" id="Pws-N1-iua"/>
+                                    <constraint firstItem="Ksl-ye-wgZ" firstAttribute="centerY" secondItem="vrb-La-5Ym" secondAttribute="centerY" id="YdM-I0-JQD"/>
+                                    <constraint firstItem="N7F-ad-faC" firstAttribute="centerY" secondItem="vrb-La-5Ym" secondAttribute="centerY" id="ggY-bj-tUv"/>
+                                    <constraint firstItem="jOI-9N-Ew0" firstAttribute="centerY" secondItem="vrb-La-5Ym" secondAttribute="centerY" id="hhq-QL-noV"/>
+                                    <constraint firstItem="jOI-9N-Ew0" firstAttribute="leading" secondItem="vrb-La-5Ym" secondAttribute="leading" constant="20" id="kh7-4w-3xS"/>
+                                </constraints>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1Za-MM-s2F">
+                                <rect key="frame" x="0.0" y="222.5" width="375" height="444.5"/>
+                                <subviews>
+                                    <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="dateAndTime" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="cDA-N6-9Xl">
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="445"/>
+                                        <date key="date" timeIntervalSinceReferenceDate="507686678.71332699">
+                                            <!--2017-02-02 00:04:38 +0000-->
+                                        </date>
+                                    </datePicker>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="cDA-N6-9Xl" secondAttribute="trailing" id="69F-rQ-MNO"/>
+                                    <constraint firstItem="cDA-N6-9Xl" firstAttribute="leading" secondItem="1Za-MM-s2F" secondAttribute="leading" id="7ih-dg-gm7"/>
+                                    <constraint firstAttribute="bottom" secondItem="cDA-N6-9Xl" secondAttribute="bottom" id="ep8-8F-rXP"/>
+                                    <constraint firstItem="cDA-N6-9Xl" firstAttribute="top" secondItem="1Za-MM-s2F" secondAttribute="top" id="ptq-ar-bCO"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="vrb-La-5Ym" firstAttribute="leading" secondItem="KaA-8O-7iT" secondAttribute="leading" id="30K-uP-NMU"/>
+                            <constraint firstItem="Umm-FY-aKM" firstAttribute="top" secondItem="1Za-MM-s2F" secondAttribute="bottom" id="6gb-Wv-VVj"/>
+                            <constraint firstItem="vrb-La-5Ym" firstAttribute="height" secondItem="KaA-8O-7iT" secondAttribute="height" multiplier="1/3" id="BOs-S2-LuO"/>
+                            <constraint firstAttribute="trailing" secondItem="vrb-La-5Ym" secondAttribute="trailing" id="Hzw-ZR-1FY"/>
+                            <constraint firstItem="1Za-MM-s2F" firstAttribute="top" secondItem="vrb-La-5Ym" secondAttribute="bottom" id="R0c-7R-kfS"/>
+                            <constraint firstItem="1Za-MM-s2F" firstAttribute="leading" secondItem="KaA-8O-7iT" secondAttribute="leading" id="aOZ-sJ-5E1"/>
+                            <constraint firstItem="vrb-La-5Ym" firstAttribute="top" secondItem="KaA-8O-7iT" secondAttribute="top" id="xQG-6a-wDZ"/>
+                            <constraint firstAttribute="trailing" secondItem="1Za-MM-s2F" secondAttribute="trailing" id="yYa-6L-tXh"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="tMN-oP-3pu" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="285.60000000000002" y="109.29535232383809"/>
+        </scene>
+    </scenes>
+</document>

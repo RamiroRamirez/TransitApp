@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16C67" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="MEQ-xj-P7n">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Navigation Controller-->
+        <scene sceneID="1ha-iU-zge">
+            <objects>
+                <navigationController id="MEQ-xj-P7n" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="UY0-vp-icz">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="barTintColor" red="0.035294117649999998" green="0.29411764709999999" blue="0.59215686270000001" alpha="1" colorSpace="calibratedRGB"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="qd8-az-gce" kind="relationship" relationship="rootViewController" id="ye6-yG-4BN"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="AUf-7D-aR9" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1" y="114"/>
+        </scene>
+        <!--Initial View Controller-->
+        <scene sceneID="FXx-nL-W9t">
+            <objects>
+                <viewController id="qd8-az-gce" customClass="TAInitialViewController" customModule="TransitApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="R53-ki-REX"/>
+                        <viewControllerLayoutGuide type="bottom" id="dLc-wQ-Tna"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="s5Y-LR-yqv">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="v6x-4v-bR7">
+                                <rect key="frame" x="0.0" y="64" width="375" height="603"/>
+                            </mapView>
+                            <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Jah-vB-LUb">
+                                <rect key="frame" x="0.0" y="64" width="375" height="150"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="150" id="TWd-Xd-1nH"/>
+                                </constraints>
+                                <connections>
+                                    <segue destination="ryn-YB-VKa" kind="embed" id="Jpq-Vy-b64"/>
+                                </connections>
+                            </containerView>
+                            <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Xi1-Nh-qOB">
+                                <rect key="frame" x="0.0" y="667" width="375" height="250"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="250" id="qIW-ql-h3t"/>
+                                </constraints>
+                                <connections>
+                                    <segue destination="BKi-o0-wIg" kind="embed" id="dMy-sh-iV2"/>
+                                </connections>
+                            </containerView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="Xi1-Nh-qOB" firstAttribute="leading" secondItem="s5Y-LR-yqv" secondAttribute="leading" id="B7F-1g-q6z"/>
+                            <constraint firstItem="dLc-wQ-Tna" firstAttribute="top" secondItem="Xi1-Nh-qOB" secondAttribute="bottom" constant="-250" id="Mde-Kz-1T9"/>
+                            <constraint firstAttribute="trailing" secondItem="Jah-vB-LUb" secondAttribute="trailing" id="NQ8-Qt-NcR"/>
+                            <constraint firstAttribute="trailing" secondItem="Xi1-Nh-qOB" secondAttribute="trailing" id="TP8-Fc-oop"/>
+                            <constraint firstItem="v6x-4v-bR7" firstAttribute="leading" secondItem="s5Y-LR-yqv" secondAttribute="leading" id="YJm-ii-2sT"/>
+                            <constraint firstItem="Jah-vB-LUb" firstAttribute="top" secondItem="R53-ki-REX" secondAttribute="bottom" id="bl9-e3-b5n"/>
+                            <constraint firstItem="Jah-vB-LUb" firstAttribute="leading" secondItem="s5Y-LR-yqv" secondAttribute="leading" id="jXM-Iw-MRu"/>
+                            <constraint firstItem="v6x-4v-bR7" firstAttribute="top" secondItem="R53-ki-REX" secondAttribute="bottom" id="oXB-eF-BO1"/>
+                            <constraint firstItem="dLc-wQ-Tna" firstAttribute="top" secondItem="v6x-4v-bR7" secondAttribute="bottom" id="sn9-Yf-FJV"/>
+                            <constraint firstAttribute="trailing" secondItem="v6x-4v-bR7" secondAttribute="trailing" id="x6P-Ti-Dsp"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="vHm-wV-iZx"/>
+                    <connections>
+                        <outlet property="destinationSelectionView" destination="Jah-vB-LUb" id="3hA-QD-68x"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="OMo-9H-ftw" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="941.60000000000002" y="113.79310344827587"/>
+        </scene>
+        <!--TADestinationSelectionViewController-->
+        <scene sceneID="FN8-IB-BaA">
+            <objects>
+                <viewControllerPlaceholder storyboardName="DestinationSelection" referencedIdentifier="TADestinationSelectionViewController" id="ryn-YB-VKa" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="QFA-oV-d5I" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1821" y="113"/>
+        </scene>
+        <!--TADatePickerViewController-->
+        <scene sceneID="Fcz-nX-YQA">
+            <objects>
+                <viewControllerPlaceholder storyboardName="DateSelection" referencedIdentifier="TADatePickerViewController" id="BKi-o0-wIg" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="O6z-B4-zem" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="941" y="753"/>
+        </scene>
+    </scenes>
+</document>
