@@ -70,12 +70,10 @@ extension TADestinationSelectionViewController	: UITableViewDelegate, UITableVie
 	}
 
 	func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-		guard let cell = tableView.dequeueReusableCell(withIdentifier: CellIdentifiers.StartSelection) as? TADestinationSelectionCell else {
-			return UITableViewCell()
-		}
-
-		guard let destinationSelectionOption = DestinationSelectionOption(rawValue: indexPath.row) else {
-			return UITableViewCell()
+		guard
+			let cell = tableView.dequeueReusableCell(withIdentifier: CellIdentifiers.StartSelection) as? TADestinationSelectionCell,
+			let destinationSelectionOption = DestinationSelectionOption(rawValue: indexPath.row) else {
+				return UITableViewCell()
 		}
 
 		cell.setupCell(selectionOptionType: destinationSelectionOption)
