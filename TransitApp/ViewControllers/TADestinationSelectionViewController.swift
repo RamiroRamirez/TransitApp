@@ -28,7 +28,7 @@ enum DestinationSelectionOption	: Int {
 		}
 	}
 
-	func text() -> String? {
+	func deafaulText() -> String? {
 		switch self {
 		case .start				: return "Your location"
 		case .end				: return nil

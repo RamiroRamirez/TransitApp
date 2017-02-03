@@ -25,7 +25,7 @@ class TADestinationSelectionCell				: UITableViewCell {
 		self.selectionStyle = .none
 		self.titleLabel?.text = selectionOptionType.title()
 		self.inputTextField?.placeholder = selectionOptionType.placeholder()
-		self.inputTextField?.text = selectionOptionType.text()
+		self.inputTextField?.text = selectionOptionType.deafaulText()
 
 		self.showDateSelectionBlock = showDateSelectionBlock
 		self.selectionOptionType = selectionOptionType
@@ -36,6 +36,7 @@ class TADestinationSelectionCell				: UITableViewCell {
 extension TADestinationSelectionCell			: UITextFieldDelegate {
 
 	func textFieldShouldBeginEditing(_ textField: UITextField) -> Bool {
+		// If the textfield is the one to pick a date, show the view containing the picker
 		guard (self.selectionOptionType != .time) else {
 			self.showDateSelectionBlock?()
 			return false

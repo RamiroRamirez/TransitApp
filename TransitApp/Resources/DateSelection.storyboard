@@ -40,13 +40,6 @@
                                         <rect key="frame" x="309" y="119" width="46" height="30"/>
                                         <state key="normal" title="Button"/>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ngV-Ac-hIl">
-                                        <rect key="frame" x="20" y="8" width="39" height="30"/>
-                                        <state key="normal" title="Close"/>
-                                        <connections>
-                                            <action selector="closePressed:" destination="ijr-uF-XHb" eventType="touchUpInside" id="9n0-3r-Rno"/>
-                                        </connections>
-                                    </button>
                                 </subviews>
                                 <constraints>
                                     <constraint firstItem="Ksl-ye-wgZ" firstAttribute="centerY" secondItem="vrb-La-5Ym" secondAttribute="centerY" id="2BC-Cj-Kpt"/>
@@ -56,8 +49,6 @@
                                     <constraint firstItem="N7F-ad-faC" firstAttribute="centerY" secondItem="vrb-La-5Ym" secondAttribute="centerY" id="ggY-bj-tUv"/>
                                     <constraint firstItem="jOI-9N-Ew0" firstAttribute="centerY" secondItem="vrb-La-5Ym" secondAttribute="centerY" id="hhq-QL-noV"/>
                                     <constraint firstItem="jOI-9N-Ew0" firstAttribute="leading" secondItem="vrb-La-5Ym" secondAttribute="leading" constant="20" id="kh7-4w-3xS"/>
-                                    <constraint firstItem="ngV-Ac-hIl" firstAttribute="top" secondItem="vrb-La-5Ym" secondAttribute="top" constant="8" id="ojj-ou-ayy"/>
-                                    <constraint firstItem="jOI-9N-Ew0" firstAttribute="leading" secondItem="ngV-Ac-hIl" secondAttribute="leading" id="sWE-ZL-EQa"/>
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1Za-MM-s2F">

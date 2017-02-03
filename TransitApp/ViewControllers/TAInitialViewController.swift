@@ -49,10 +49,12 @@ class TAInitialViewController									: UIViewController {
 	override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
 		if (segue.identifier == SegueIdentifiers.toDestinationSelectionViewController.rawValue),
 			let destinationSelectionViewController = segue.destination as? TADestinationSelectionViewController {
+				// Configure destination selection View Controller
 				destinationSelectionViewController.showDateSelectionViewBlock = self.showOrHideDateSelectionView
 
 		} else if (segue.identifier == SegueIdentifiers.toDateSelectionViewController.rawValue),
 			let dateSelectionViewController = segue.destination as? TADatePickerViewController {
+				// Configure Date Selection View controller
 				dateSelectionViewController.closeDatePickerViewBlock = self.showOrHideDateSelectionView
 		}
 	}
