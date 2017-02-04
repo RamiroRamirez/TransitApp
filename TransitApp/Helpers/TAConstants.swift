@@ -11,19 +11,23 @@ import UIKit
 
 struct CellHeights {
 	static let DestinationSelection				= CGFloat(50)
+	static let TravelOption						= CGFloat(150)
 }
 
 enum CellIdentifiers: String {
 	case startSelection 						= "TADestinationSelectionCell"
+	case travelOption							= "TATravelOptionCell"
 }
 
 enum SegueIdentifiers: String {
 	case toDestinationSelectionViewController	= "toDestinationSelectionViewController"
 	case toDateSelectionViewController			= "toDateSelectionViewController"
+	case toSummaryOptionsViewController			= "toSummaryOptionsViewController"
 }
 
 struct NibNames {
 	static let DestinationSelectionCell			= "TADestinationSelectionCell"
+	static let TravelOptionCell					= "TATravelOptionCell"
 }
 
 struct AlphaForViews {

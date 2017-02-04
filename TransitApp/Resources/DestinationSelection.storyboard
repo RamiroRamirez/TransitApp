@@ -40,11 +40,20 @@
                     </view>
                     <connections>
                         <outlet property="tableView" destination="DiG-Hv-YB5" id="KQO-qS-3p4"/>
+                        <segue destination="g2C-E1-Jyt" kind="show" identifier="toSummaryOptionsViewController" id="XhU-BT-ch4"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="EVW-xy-TvZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="293.60000000000002" y="176.76161919040482"/>
+        </scene>
+        <!--TASummaryOptionsViewController-->
+        <scene sceneID="d3N-jK-0YX">
+            <objects>
+                <viewControllerPlaceholder storyboardName="SummaryOptions" referencedIdentifier="TASummaryOptionsViewController" id="g2C-E1-Jyt" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="HKg-eq-J79" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1198" y="176"/>
         </scene>
     </scenes>
 </document>
