@@ -19,6 +19,7 @@ class TAInitialViewController									: UIViewController {
 	// MARK: - Properties
 
 	var destinationSelectionViewController						: TADestinationSelectionViewController?
+	var datePickerViewController								: TADatePickerViewController?
 
 	// MARK: - View Life Cycle
 
@@ -49,10 +50,17 @@ class TAInitialViewController									: UIViewController {
 	}
 
 	fileprivate func dateSelected(date: Date, isDeparture: Bool) {
+		// Clean date already saved in parameter dictionary
+		self.destinationSelectionViewController?.searchParametersDictionary[SearchParametersKeys.ArriveDate] = nil
+		self.destinationSelectionViewController?.searchParametersDictionary[SearchParametersKeys.DepartureDate] = nil
+
 		// Set "date" for parameters dictionary in destination view Controller
 		let dateKey = ((isDeparture == true) ? SearchParametersKeys.DepartureDate : SearchParametersKeys.ArriveDate)
 		self.destinationSelectionViewController?.searchParametersDictionary[dateKey] = date
 		self.destinationSelectionViewController?.reloadDataTableView()
+
+		let timeConfigurationOption: TimeConfigurationOption = ((isDeparture == true) ? .Departure : .Arrive)
+		self.datePickerViewController?.setInitialValuesForPickerAndSegmentedControl(date: date, timeConfigurationOption: timeConfigurationOption)
 	}
 
 	// MARK: - Navigation
@@ -69,6 +77,7 @@ class TAInitialViewController									: UIViewController {
 				// Configure Date Selection View controller
 				dateSelectionViewController.closeDatePickerViewBlock = self.showOrHideDateSelectionView
 				dateSelectionViewController.dateSelectedBlock = self.dateSelected
+				self.datePickerViewController = dateSelectionViewController
 		}
 	}
 }

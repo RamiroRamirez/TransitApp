@@ -8,6 +8,12 @@
 
 import UIKit
 
+enum TimeConfigurationOption: Int {
+
+	case Departure = 0
+	case Arrive
+}
+
 class TADatePickerViewController								: UIViewController {
 
 	// MARK: - Outlets
@@ -19,6 +25,11 @@ class TADatePickerViewController								: UIViewController {
 
 	var closeDatePickerViewBlock								: ((_ show: Bool) -> Void)?
 	var dateSelectedBlock										: ((_ date: Date, _ isDeparture: Bool) -> Void)?
+
+	func setInitialValuesForPickerAndSegmentedControl(date: Date?, timeConfigurationOption: TimeConfigurationOption) {
+		self.datePicker?.date = (date ?? Date())
+		self.arriveDepartureSegmentedControl?.selectedSegmentIndex = timeConfigurationOption.rawValue
+	}
 
 	// MARK: - Actions
 

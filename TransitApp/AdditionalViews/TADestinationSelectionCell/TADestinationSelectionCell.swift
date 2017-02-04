@@ -36,16 +36,34 @@ class TADestinationSelectionCell				: UITableViewCell {
 
 	private func textFromParameterDictionary(selectionOptionType: DestinationSelectionOption, parametersDictionary: [String: Any]) -> String? {
 
+		func stringForArriveOrDeparture() -> String {
+			return ((parametersDictionary[SearchParametersKeys.ArriveDate] != nil) ? "Arrive" : "Depart")
+		}
+
 		func dateInfosToShow(date: Date?) -> String? {
 			guard let _date = date else {
 				return nil
 			}
 
-			let dateFormatter = DateFormatter()
-			dateFormatter.dateStyle = .full
-			dateFormatter.timeStyle = .medium
+			// Needs to be arrived or departure?
+			let firstStringPart = stringForArriveOrDeparture()
 
-			return dateFormatter.string(from: _date)
+			let dateFormatter = DateFormatter()
+			dateFormatter.timeStyle = .short
+
+			let calendar = NSCalendar.current
+			if (calendar.isDateInToday(_date) == true) {
+				return "\(firstStringPart) Today \(dateFormatter.string(from: _date))"
+
+			} else if (calendar.isDateInYesterday(_date) == true) {
+				return "\(firstStringPart) Yesterday \(dateFormatter.string(from: _date))"
+
+			} else if (calendar.isDateInTomorrow(_date)){
+				return "\(firstStringPart) Tomorrow \(dateFormatter.string(from: _date))"
+			}
+
+			dateFormatter.dateFormat = "EEEEEE, dd MMM, H:mm"
+			return "\(firstStringPart) \(dateFormatter.string(from: _date))"
 		}
 
 		switch selectionOptionType {
