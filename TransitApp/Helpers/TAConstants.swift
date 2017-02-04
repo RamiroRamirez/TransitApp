@@ -29,3 +29,10 @@ struct NibNames {
 struct AlphaForViews {
 	static let DestinationSelectionView			= CGFloat(0.9)
 }
+
+struct SearchParametersKeys {
+	static let Start							= "Start"
+	static let End								= "End"
+	static let ArriveDate						= "ArriveDate"
+	static let DepartureDate					= "DepartureDate"
+}

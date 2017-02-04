@@ -13,6 +13,7 @@ class TADatePickerViewController: UIViewController {
 	// MARK: - Properties
 
 	var closeDatePickerViewBlock	: ((_ show: Bool) -> Void)?
+	var dateSelectedBlock			: ((_ date: NSDate, _ isDeparture: Bool) -> Void)?
 
 	// MARK: - Actions
 

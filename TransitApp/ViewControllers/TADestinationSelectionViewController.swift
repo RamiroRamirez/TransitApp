@@ -55,6 +55,12 @@ class TADestinationSelectionViewController		: UIViewController {
 
 	var showDateSelectionViewBlock				: ((_ show: Bool) -> Void)?
 
+	// dictionary including search parameters: 
+	//	*Start	-> Coordinates/ place to start
+	//	*End	-> Coordinates/ place to go
+	//	*Date	-> Date departure/arrival
+	var searchParametersDictionary				= [String: AnyObject]()
+
 	// MARK: - View life cycle
 
 	override func viewDidLoad() {

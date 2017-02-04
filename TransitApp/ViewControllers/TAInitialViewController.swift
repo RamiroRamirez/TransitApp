@@ -16,6 +16,10 @@ class TAInitialViewController									: UIViewController {
 	@IBOutlet private weak var datePickerViewBottomConstraint	: NSLayoutConstraint?
 	@IBOutlet private weak var datePickerViewHeightConstraint	: NSLayoutConstraint?
 
+	// MARK: - Properties
+
+	var destinationSelectionViewController						: TADestinationSelectionViewController?
+
 	// MARK: - View Life Cycle
 
 	override func viewDidLoad() {
@@ -44,6 +48,12 @@ class TAInitialViewController									: UIViewController {
 		}
 	}
 
+	fileprivate func dateSelected(date: NSDate, isDeparture: Bool) {
+		// Set "date" for parameters dictionary in destination view Controller
+		let dateKey = ((isDeparture == true) ? SearchParametersKeys.DepartureDate : SearchParametersKeys.ArriveDate)
+		self.destinationSelectionViewController?.searchParametersDictionary[dateKey] = date
+	}
+
 	// MARK: - Navigation
 
 	override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -51,11 +61,13 @@ class TAInitialViewController									: UIViewController {
 			let destinationSelectionViewController = segue.destination as? TADestinationSelectionViewController {
 				// Configure destination selection View Controller
 				destinationSelectionViewController.showDateSelectionViewBlock = self.showOrHideDateSelectionView
+				self.destinationSelectionViewController = destinationSelectionViewController
 
 		} else if (segue.identifier == SegueIdentifiers.toDateSelectionViewController.rawValue),
 			let dateSelectionViewController = segue.destination as? TADatePickerViewController {
 				// Configure Date Selection View controller
 				dateSelectionViewController.closeDatePickerViewBlock = self.showOrHideDateSelectionView
+				dateSelectionViewController.dateSelectedBlock = self.dateSelected
 		}
 	}
 }
