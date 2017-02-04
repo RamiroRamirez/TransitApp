@@ -10,8 +10,8 @@ import UIKit
 
 enum TimeConfigurationOption: Int {
 
-	case Departure = 0
-	case Arrive
+	case departure = 0
+	case arrive
 }
 
 class TADatePickerViewController								: UIViewController {

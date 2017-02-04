@@ -139,8 +139,8 @@
 		281C0C351E42A5640006F9C0 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
-				281C0C431E42B0CB0006F9C0 /* TADestinationSelectionViewController.swift */,
 				281C0C501E42BD2B0006F9C0 /* TAInitialViewController.swift */,
+				281C0C431E42B0CB0006F9C0 /* TADestinationSelectionViewController.swift */,
 				28F0DAA21E43B9C5003CC0D3 /* TADatePickerViewController.swift */,
 			);
 			path = ViewControllers;

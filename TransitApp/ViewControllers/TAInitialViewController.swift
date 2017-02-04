@@ -8,18 +8,19 @@
 
 import UIKit
 
-class TAInitialViewController									: UIViewController {
+class TAInitialViewController											: UIViewController {
 
 	// MARK: - Outlets
 
-	@IBOutlet private weak var destinationSelectionView			: UIView?
-	@IBOutlet private weak var datePickerViewBottomConstraint	: NSLayoutConstraint?
-	@IBOutlet private weak var datePickerViewHeightConstraint	: NSLayoutConstraint?
+	@IBOutlet private weak var destinationSelectionView					: UIView?
+	@IBOutlet private weak var datePickerViewBottomConstraint			: NSLayoutConstraint?
+	@IBOutlet private weak var datePickerViewHeightConstraint			: NSLayoutConstraint?
+	@IBOutlet private weak var destinationSelectionViewHeightConstraint	: NSLayoutConstraint?
 
 	// MARK: - Properties
 
-	var destinationSelectionViewController						: TADestinationSelectionViewController?
-	var datePickerViewController								: TADatePickerViewController?
+	var destinationSelectionViewController								: TADestinationSelectionViewController?
+	var datePickerViewController										: TADatePickerViewController?
 
 	// MARK: - View Life Cycle
 
@@ -30,22 +31,40 @@ class TAInitialViewController									: UIViewController {
 		self.addTapRecognizer()
 	}
 
-	// MARK: - Date Selection view Methods
+	// MARK: - General Helpers
 
 	fileprivate func addTapRecognizer() {
 		let tapRecognizer = UITapGestureRecognizer(target: self, action: #selector(hideDatePickerView(_:)))
 		self.view.addGestureRecognizer(tapRecognizer)
 	}
 
+	/// Change destination height to show the extra row with search button
+	fileprivate func changeDestinationSelectionViewHeightIfNeeded() {
+		let isAllInformationCompleted = (self.destinationSelectionViewController?.isAllSearchInformationCompleted() == true)
+		self.destinationSelectionViewHeightConstraint?.constant = ((isAllInformationCompleted == true) ? ConstraintsConstants.TableViewWithSearchHeight : ConstraintsConstants.TableViewWithoutSearchHeight)
+		UIView.animate(withDuration: AnimationDurations.Standard) { [weak self] in
+			self?.view.layoutIfNeeded()
+		}
+	}
+
+	// MARK: - Date Selection view Methods
+
 	func hideDatePickerView(_ sender: UITapGestureRecognizer) {
 		self.showOrHideDateSelectionView(show: false)
+
+		// Resign the responders from all textfields and reload data to show search button if needed
+		self.destinationSelectionViewController?.resignAllFirstResponders()
+		self.destinationSelectionViewController?.reloadDataTableView()
+
+		self.changeDestinationSelectionViewHeightIfNeeded()
 	}
 
 	fileprivate func showOrHideDateSelectionView(show: Bool) {
 		let bottomConstraintToHide = ((self.datePickerViewHeightConstraint?.constant ?? 0)) * CGFloat(-1)
+		self.destinationSelectionViewController?.resignAllFirstResponders()
 		self.datePickerViewBottomConstraint?.constant = ((show == true) ? 0 : bottomConstraintToHide)
-		UIView.animate(withDuration: 0.3) {
-			self.view.layoutIfNeeded()
+		UIView.animate(withDuration: AnimationDurations.Standard) { [weak self] in
+			self?.view.layoutIfNeeded()
 		}
 	}
 
@@ -57,9 +76,12 @@ class TAInitialViewController									: UIViewController {
 		// Set "date" for parameters dictionary in destination view Controller
 		let dateKey = ((isDeparture == true) ? SearchParametersKeys.DepartureDate : SearchParametersKeys.ArriveDate)
 		self.destinationSelectionViewController?.searchParametersDictionary[dateKey] = date
+
+		self.changeDestinationSelectionViewHeightIfNeeded()
 		self.destinationSelectionViewController?.reloadDataTableView()
 
-		let timeConfigurationOption: TimeConfigurationOption = ((isDeparture == true) ? .Departure : .Arrive)
+		// Set last option selected in date picker for a better UI Experience
+		let timeConfigurationOption: TimeConfigurationOption = ((isDeparture == true) ? .departure : .arrive)
 		self.datePickerViewController?.setInitialValuesForPickerAndSegmentedControl(date: date, timeConfigurationOption: timeConfigurationOption)
 	}
 

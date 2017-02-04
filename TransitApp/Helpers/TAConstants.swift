@@ -30,6 +30,20 @@ struct AlphaForViews {
 	static let DestinationSelectionView			= CGFloat(0.9)
 }
 
+struct ConstraintsConstants {
+	static let TableViewWithSearchHeight		= CGFloat(200)
+	static let TableViewWithoutSearchHeight		= CGFloat(150)
+}
+
+struct CornerRadius {
+	static let Standard							= CGFloat(5)
+}
+
+struct AnimationDurations {
+	static let Standard							= TimeInterval(0.3)
+
+}
+
 struct SearchParametersKeys {
 	static let Start							= "Start"
 	static let End								= "End"

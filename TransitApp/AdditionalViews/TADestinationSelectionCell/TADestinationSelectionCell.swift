@@ -14,25 +14,40 @@ class TADestinationSelectionCell				: UITableViewCell {
 
 	@IBOutlet private weak var titleLabel		: UILabel?
 	@IBOutlet private weak var inputTextField	: UITextField?
+	@IBOutlet private weak var searchButton		: UIButton?
 
 	// MARK: - Properties
 
 	var selectionOptionType						: DestinationSelectionOption = .start
 	var showDateSelectionBlock					: (() -> Void)?
+	var userInputBlock							: ((_ parameter: String, _ value: String?) -> Void)?
 
-	func setupCell(selectionOptionType: DestinationSelectionOption, showDateSelectionBlock: (() -> Void)?, parametersDictionary: [String: Any]) {
+	// MARK: - Setup Methods
+	func setupCell(selectionOptionType: DestinationSelectionOption, showDateSelectionBlock: (() -> Void)?, userInputBlock: ((_ parameter: String, _ value: String?) -> Void)?, parametersDictionary: [String: Any]) {
 
 		self.selectionStyle = .none
+		self.showUIElementsForOptionType(selectionOptionType: selectionOptionType)
 		let textToShow = self.textFromParameterDictionary(selectionOptionType: selectionOptionType, parametersDictionary: parametersDictionary)
+
+		self.searchButton?.layer.cornerRadius = CornerRadius.Standard
 
 		self.titleLabel?.text = selectionOptionType.title()
 		self.inputTextField?.placeholder = selectionOptionType.placeholder()
 		self.inputTextField?.text = (textToShow ?? selectionOptionType.deafaulText())
 
 		self.showDateSelectionBlock = showDateSelectionBlock
+		self.userInputBlock = userInputBlock
 		self.selectionOptionType = selectionOptionType
 		self.inputTextField?.delegate = self
 	}
+
+	private func showUIElementsForOptionType(selectionOptionType: DestinationSelectionOption) {
+		self.searchButton?.isHidden = (selectionOptionType != .search)
+		self.titleLabel?.isHidden = (selectionOptionType == .search)
+		self.inputTextField?.isHidden = (selectionOptionType == .search)
+	}
+
+	// AMRK: - General Helpers
 
 	private func textFromParameterDictionary(selectionOptionType: DestinationSelectionOption, parametersDictionary: [String: Any]) -> String? {
 
@@ -70,9 +85,16 @@ class TADestinationSelectionCell				: UITableViewCell {
 		case .start,
 		     .end		: return selectionOptionType.textToShow(parametersDictionary: parametersDictionary) as? String
 		case .time		: return dateInfosToShow(date: (selectionOptionType.textToShow(parametersDictionary: parametersDictionary) as? Date))
+		case .search	: return nil
 		}
 	}
+
+	func resignTextFieldFirstResponder() {
+		self.inputTextField?.resignFirstResponder()
+	}
 }
+
+// MARK: - TextField Delegate Methods
 
 extension TADestinationSelectionCell			: UITextFieldDelegate {
 
@@ -84,5 +106,14 @@ extension TADestinationSelectionCell			: UITextFieldDelegate {
 		}
 
 		return true
+	}
+
+	func textFieldDidEndEditing(_ textField: UITextField) {
+		if (self.selectionOptionType == .start) {
+			self.userInputBlock?(SearchParametersKeys.Start, textField.text)
+
+		} else if (self.selectionOptionType == .end) {
+			self.userInputBlock?(SearchParametersKeys.End, textField.text)
+		}
 	}
 }

@@ -79,6 +79,7 @@
                         <outlet property="datePickerViewBottomConstraint" destination="zAp-Qo-hsg" id="9ID-Nu-FWS"/>
                         <outlet property="datePickerViewHeightConstraint" destination="qIW-ql-h3t" id="efh-OD-Z6n"/>
                         <outlet property="destinationSelectionView" destination="Jah-vB-LUb" id="3hA-QD-68x"/>
+                        <outlet property="destinationSelectionViewHeightConstraint" destination="TWd-Xd-1nH" id="MRB-IV-DgE"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="OMo-9H-ftw" userLabel="First Responder" sceneMemberID="firstResponder"/>
