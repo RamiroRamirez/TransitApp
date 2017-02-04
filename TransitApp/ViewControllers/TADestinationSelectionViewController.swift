@@ -43,6 +43,14 @@ enum DestinationSelectionOption	: Int {
 		case .time				: return "Depart now"
 		}
 	}
+
+	func textToShow(parametersDictionary: [String: Any]) -> Any? {
+		switch self {
+		case .start				: return parametersDictionary[SearchParametersKeys.Start]
+		case .end				: return parametersDictionary[SearchParametersKeys.End]
+		case .time				: return parametersDictionary[SearchParametersKeys.ArriveDate] ?? parametersDictionary[SearchParametersKeys.DepartureDate]
+		}
+	}
 }
 
 class TADestinationSelectionViewController		: UIViewController {
@@ -59,7 +67,11 @@ class TADestinationSelectionViewController		: UIViewController {
 	//	*Start	-> Coordinates/ place to start
 	//	*End	-> Coordinates/ place to go
 	//	*Date	-> Date departure/arrival
-	var searchParametersDictionary				= [String: AnyObject]()
+	var searchParametersDictionary				= [String: Any]()
+
+	func reloadDataTableView() {
+		self.tableView?.reloadData()
+	}
 
 	// MARK: - View life cycle
 
@@ -92,7 +104,7 @@ extension TADestinationSelectionViewController	: UITableViewDelegate, UITableVie
 				return UITableViewCell()
 		}
 
-		cell.setupCell(selectionOptionType: destinationSelectionOption, showDateSelectionBlock: self.showDateSelectionView)
+		cell.setupCell(selectionOptionType: destinationSelectionOption, showDateSelectionBlock: self.showDateSelectionView, parametersDictionary: self.searchParametersDictionary)
 		return cell
 	}
 

@@ -48,10 +48,11 @@ class TAInitialViewController									: UIViewController {
 		}
 	}
 
-	fileprivate func dateSelected(date: NSDate, isDeparture: Bool) {
+	fileprivate func dateSelected(date: Date, isDeparture: Bool) {
 		// Set "date" for parameters dictionary in destination view Controller
 		let dateKey = ((isDeparture == true) ? SearchParametersKeys.DepartureDate : SearchParametersKeys.ArriveDate)
 		self.destinationSelectionViewController?.searchParametersDictionary[dateKey] = date
+		self.destinationSelectionViewController?.reloadDataTableView()
 	}
 
 	// MARK: - Navigation

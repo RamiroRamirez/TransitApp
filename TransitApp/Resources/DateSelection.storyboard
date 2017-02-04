@@ -33,12 +33,18 @@
                                         </segments>
                                     </segmentedControl>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jOI-9N-Ew0">
-                                        <rect key="frame" x="20" y="118" width="46" height="30"/>
-                                        <state key="normal" title="Button"/>
+                                        <rect key="frame" x="20" y="118" width="31" height="30"/>
+                                        <state key="normal" title="Now"/>
+                                        <connections>
+                                            <action selector="nowPressed:" destination="ijr-uF-XHb" eventType="touchUpInside" id="9Ez-Vo-wxt"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="N7F-ad-faC">
-                                        <rect key="frame" x="309" y="119" width="46" height="30"/>
-                                        <state key="normal" title="Button"/>
+                                        <rect key="frame" x="318" y="119" width="37" height="30"/>
+                                        <state key="normal" title="Done"/>
+                                        <connections>
+                                            <action selector="donePressed:" destination="ijr-uF-XHb" eventType="touchUpInside" id="tms-8c-rus"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <constraints>
@@ -82,6 +88,10 @@
                             <constraint firstAttribute="trailing" secondItem="1Za-MM-s2F" secondAttribute="trailing" id="yYa-6L-tXh"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="arriveDepartureSegmentedControl" destination="Ksl-ye-wgZ" id="YXN-Ma-FS3"/>
+                        <outlet property="datePicker" destination="cDA-N6-9Xl" id="c7J-kR-v5V"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="tMN-oP-3pu" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
