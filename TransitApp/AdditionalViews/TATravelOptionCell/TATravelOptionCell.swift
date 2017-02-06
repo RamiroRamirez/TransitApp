@@ -17,6 +17,7 @@ class TATravelOptionCell									: UITableViewCell {
 	@IBOutlet private weak var priceLabel					: UILabel?
 	@IBOutlet private weak var startEndTime					: UILabel?
 	@IBOutlet private weak var optionImagesContainerView	: UIView?
+	@IBOutlet private weak var mainContainerView			: UIView?
 
 	@IBOutlet var segmentViews								: [TASegmentView]?
 
@@ -27,9 +28,11 @@ class TATravelOptionCell									: UITableViewCell {
 	func setupCell(travel: Travel) {
 		self.travel = travel
 
+		self.mainContainerView?.layer.cornerRadius = CornerRadius.Standard
 		self.titleLabel?.text = travel.type
 		self.priceLabel?.text = "\(travel.price.amount / GeneralHelpers.AmountFactor) \(travel.price.currency)"
 		self.timeLabel?.text = self.calculateTotalTimeString()
+		self.startEndTime?.text = self.rangeOfTimeToShow()
 		self.showNeededSegmentViews()
 	}
 
@@ -43,6 +46,25 @@ class TATravelOptionCell									: UITableViewCell {
 		}
 
 		return "\(totalTimeInMinutes) min"
+	}
+
+	fileprivate func rangeOfTimeToShow() -> String? {
+		guard
+			let firstSegment = self.travel?.segments.first,
+			let lastSegment = self.travel?.segments.last,
+			let firstStop = firstSegment.stops.first,
+			let lastStop = lastSegment.stops.last else {
+				return nil
+		}
+
+		let dateFormatter = DateFormatter()
+		dateFormatter.dateStyle = .none
+		dateFormatter.timeStyle = .short
+
+		let startTime = dateFormatter.string(from: firstStop.dateTime)
+		let endTime = dateFormatter.string(from: lastStop.dateTime)
+
+		return "\(startTime) -> \(endTime)"
 	}
 
 	fileprivate func showNeededSegmentViews() {

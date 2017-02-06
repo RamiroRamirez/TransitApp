@@ -53,4 +53,8 @@ extension TASummaryOptionsViewController: UITableViewDelegate, UITableViewDataSo
 		cell.setupCell(travel: travel)
 		return cell
 	}
+
+	func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+		tableView.deselectRow(at: indexPath, animated: true)
+	}
 }
