@@ -9,11 +9,6 @@
 import Foundation
 import UIKit
 
-struct CellHeights {
-	static let DestinationSelection				= CGFloat(50)
-	static let TravelOption						= CGFloat(150)
-}
-
 enum CellIdentifiers: String {
 	case startSelection 						= "TADestinationSelectionCell"
 	case travelOption							= "TATravelOptionCell"
@@ -23,6 +18,40 @@ enum SegueIdentifiers: String {
 	case toDestinationSelectionViewController	= "toDestinationSelectionViewController"
 	case toDateSelectionViewController			= "toDateSelectionViewController"
 	case toSummaryOptionsViewController			= "toSummaryOptionsViewController"
+}
+
+enum JSONKeys: String {
+
+	case routes									= "routes"
+	case providerAttributes						= "provider_attributes"
+	case transportType							= "type"
+	case provider								= "provider"
+	case segments								= "segments"
+	case price									= "price"
+	case properties								= "properties"
+	case amount									= "amount"
+	case currency								= "currency"
+	case name									= "name"
+	case numberStops							= "num_stops"
+	case stops									= "stops"
+	case travelMode								= "travel_mode"
+	case description							= "description"
+	case color									= "color"
+	case iconURL								= "icon_url"
+	case polyline								= "polyline"
+	case latitude								= "lat"
+	case longitude								= "lng"
+	case dateTime								= "datetime"
+}
+
+struct Resources {
+	static let TransportData					= "data"
+	static let JSONType							= "json"
+}
+
+struct CellHeights {
+	static let DestinationSelection				= CGFloat(50)
+	static let TravelOption						= CGFloat(170)
 }
 
 struct NibNames {
@@ -54,3 +83,20 @@ struct SearchParametersKeys {
 	static let ArriveDate						= "ArriveDate"
 	static let DepartureDate					= "DepartureDate"
 }
+
+struct GeneralHelpers {
+	static let AmountFactor						= Double(100)
+}
+
+extension Array {
+	/*
+	* Bounds-checked ("safe") index lookup for Arrays.
+	* Example usage:
+	* let foo = [0,1,2][safe: 1]	|	foo = (Int?) 1
+	* let bar = [0,1,2][safe: 10]	|	bar = (Int?) nil
+	*/
+	subscript (safe index: Int) -> Element? {
+		return ((self.indices ~= index) ? self[index] : nil)
+	}
+}
+
