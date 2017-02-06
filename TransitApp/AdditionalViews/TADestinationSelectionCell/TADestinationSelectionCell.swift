@@ -21,9 +21,10 @@ class TADestinationSelectionCell				: UITableViewCell {
 	var selectionOptionType						: DestinationSelectionOption = .start
 	var showDateSelectionBlock					: (() -> Void)?
 	var userInputBlock							: ((_ parameter: String, _ value: String?) -> Void)?
+	var searchPressedBlock						: (() -> Void)?
 
 	// MARK: - Setup Methods
-	func setupCell(selectionOptionType: DestinationSelectionOption, showDateSelectionBlock: (() -> Void)?, userInputBlock: ((_ parameter: String, _ value: String?) -> Void)?, parametersDictionary: [String: Any]) {
+	func setupCell(selectionOptionType: DestinationSelectionOption, showDateSelectionBlock: (() -> Void)?, userInputBlock: ((_ parameter: String, _ value: String?) -> Void)?, searchPressedBlock: (() -> Void)?, parametersDictionary: [String: Any]) {
 
 		self.selectionStyle = .none
 		self.showUIElementsForOptionType(selectionOptionType: selectionOptionType)
@@ -37,6 +38,7 @@ class TADestinationSelectionCell				: UITableViewCell {
 
 		self.showDateSelectionBlock = showDateSelectionBlock
 		self.userInputBlock = userInputBlock
+		self.searchPressedBlock = searchPressedBlock
 		self.selectionOptionType = selectionOptionType
 		self.inputTextField?.delegate = self
 	}
@@ -91,6 +93,15 @@ class TADestinationSelectionCell				: UITableViewCell {
 
 	func resignTextFieldFirstResponder() {
 		self.inputTextField?.resignFirstResponder()
+	}
+}
+
+// MARK: - Actions
+
+extension TADestinationSelectionCell {
+
+	@IBAction func searchPressed(_ sender: Any) {
+		self.searchPressedBlock?()
 	}
 }
 

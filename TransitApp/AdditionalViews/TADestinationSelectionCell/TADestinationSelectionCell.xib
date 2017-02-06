@@ -39,6 +39,9 @@
                         <rect key="frame" x="206" y="5" width="106" height="34"/>
                         <color key="backgroundColor" red="0.0" green="0.3921568627" blue="0.64705882349999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <state key="normal" title="Search"/>
+                        <connections>
+                            <action selector="searchPressed:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="hrF-A0-Wd1"/>
+                        </connections>
                     </button>
                 </subviews>
                 <constraints>

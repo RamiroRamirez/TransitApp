@@ -98,7 +98,18 @@ class TADestinationSelectionViewController		: UIViewController {
 	// MARK: - Fill parameter dictionary methods
 
 	fileprivate func userInputBlock(parameter: String, value: String?) {
+		guard (value?.isEmpty == false) else {
+			self.searchParametersDictionary[parameter] = nil
+			return
+		}
+
 		self.searchParametersDictionary[parameter] = value
+	}
+
+	// MARK: - Search pressed Method
+
+	fileprivate func searchPressed() {
+		self.performSegue(withIdentifier: SegueIdentifiers.toSummaryOptionsViewController.rawValue, sender: nil)
 	}
 
 	// MARK: - General Helpers
@@ -137,7 +148,7 @@ extension TADestinationSelectionViewController	: UITableViewDelegate, UITableVie
 				return UITableViewCell()
 		}
 
-		cell.setupCell(selectionOptionType: destinationSelectionOption, showDateSelectionBlock: self.showDateSelectionView, userInputBlock: self.userInputBlock, parametersDictionary: self.searchParametersDictionary)
+		cell.setupCell(selectionOptionType: destinationSelectionOption, showDateSelectionBlock: self.showDateSelectionView, userInputBlock: self.userInputBlock, searchPressedBlock: self.searchPressed, parametersDictionary: self.searchParametersDictionary)
 		return cell
 	}
 
