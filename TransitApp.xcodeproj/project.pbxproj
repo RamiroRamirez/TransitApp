@@ -31,6 +31,12 @@
 		2858450F1E47708E00FC1CFA /* data.json in Resources */ = {isa = PBXBuildFile; fileRef = 2858450E1E47708E00FC1CFA /* data.json */; };
 		285845111E47712200FC1CFA /* APIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 285845101E47712200FC1CFA /* APIManager.swift */; };
 		285845131E47C56500FC1CFA /* TASegmentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 285845121E47C56500FC1CFA /* TASegmentView.swift */; };
+		285845151E47FD0800FC1CFA /* TravelDetail.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 285845141E47FD0800FC1CFA /* TravelDetail.storyboard */; };
+		285845191E47FE4F00FC1CFA /* TAStopCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 285845171E47FE4F00FC1CFA /* TAStopCell.swift */; };
+		2858451A1E47FE4F00FC1CFA /* TAStopCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 285845181E47FE4F00FC1CFA /* TAStopCell.xib */; };
+		2858451D1E47FF8D00FC1CFA /* TARouteCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2858451B1E47FF8D00FC1CFA /* TARouteCell.swift */; };
+		2858451E1E47FF8D00FC1CFA /* TARouteCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2858451C1E47FF8D00FC1CFA /* TARouteCell.xib */; };
+		285845261E48031400FC1CFA /* TATravelDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 285845251E48031400FC1CFA /* TATravelDetailViewController.swift */; };
 		28F0DAA31E43B9C5003CC0D3 /* TADatePickerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28F0DAA21E43B9C5003CC0D3 /* TADatePickerViewController.swift */; };
 		FCCC468D8D65C103815E18CB /* Pods_TransitApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 130B0B1465AFA00AE7D09EEA /* Pods_TransitApp.framework */; };
 /* End PBXBuildFile section */
@@ -75,6 +81,12 @@
 		2858450E1E47708E00FC1CFA /* data.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = data.json; sourceTree = "<group>"; };
 		285845101E47712200FC1CFA /* APIManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIManager.swift; sourceTree = "<group>"; };
 		285845121E47C56500FC1CFA /* TASegmentView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TASegmentView.swift; sourceTree = "<group>"; };
+		285845141E47FD0800FC1CFA /* TravelDetail.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = TravelDetail.storyboard; sourceTree = "<group>"; };
+		285845171E47FE4F00FC1CFA /* TAStopCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TAStopCell.swift; sourceTree = "<group>"; };
+		285845181E47FE4F00FC1CFA /* TAStopCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TAStopCell.xib; sourceTree = "<group>"; };
+		2858451B1E47FF8D00FC1CFA /* TARouteCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TARouteCell.swift; sourceTree = "<group>"; };
+		2858451C1E47FF8D00FC1CFA /* TARouteCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TARouteCell.xib; sourceTree = "<group>"; };
+		285845251E48031400FC1CFA /* TATravelDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TATravelDetailViewController.swift; sourceTree = "<group>"; };
 		28F0DAA21E43B9C5003CC0D3 /* TADatePickerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TADatePickerViewController.swift; sourceTree = "<group>"; };
 		4F43FEADED1C77C814CDF7A9 /* Pods-TransitApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TransitApp.debug.xcconfig"; path = "Pods/Target Support Files/Pods-TransitApp/Pods-TransitApp.debug.xcconfig"; sourceTree = "<group>"; };
 		D34749BA02E0974111D31C55 /* Pods-TransitApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TransitApp.release.xcconfig"; path = "Pods/Target Support Files/Pods-TransitApp/Pods-TransitApp.release.xcconfig"; sourceTree = "<group>"; };
@@ -146,6 +158,7 @@
 		281C0C331E42A5640006F9C0 /* AdditionalViews */ = {
 			isa = PBXGroup;
 			children = (
+				285845161E47FD5500FC1CFA /* TATravelDetailCells */,
 				285844FE1E464AC500FC1CFA /* TATravelOptionCell */,
 				281C0C4B1E42B6AA0006F9C0 /* TADestinationSelectionCell */,
 			);
@@ -168,6 +181,7 @@
 				281C0C431E42B0CB0006F9C0 /* TADestinationSelectionViewController.swift */,
 				28F0DAA21E43B9C5003CC0D3 /* TADatePickerViewController.swift */,
 				285845031E464F4B00FC1CFA /* TASummaryOptionsViewController.swift */,
+				285845251E48031400FC1CFA /* TATravelDetailViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -182,6 +196,7 @@
 				281C0C3D1E42A7880006F9C0 /* DestinationSelection.storyboard */,
 				281C0C411E42AD100006F9C0 /* DateSelection.storyboard */,
 				285844FC1E464A3100FC1CFA /* SummaryOptions.storyboard */,
+				285845141E47FD0800FC1CFA /* TravelDetail.storyboard */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -214,6 +229,17 @@
 				2858450C1E47678700FC1CFA /* Segment.swift */,
 			);
 			path = Models;
+			sourceTree = "<group>";
+		};
+		285845161E47FD5500FC1CFA /* TATravelDetailCells */ = {
+			isa = PBXGroup;
+			children = (
+				285845171E47FE4F00FC1CFA /* TAStopCell.swift */,
+				285845181E47FE4F00FC1CFA /* TAStopCell.xib */,
+				2858451B1E47FF8D00FC1CFA /* TARouteCell.swift */,
+				2858451C1E47FF8D00FC1CFA /* TARouteCell.xib */,
+			);
+			path = TATravelDetailCells;
 			sourceTree = "<group>";
 		};
 		4F9B29068019CF513169A27F /* Frameworks */ = {
@@ -322,9 +348,12 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2858451E1E47FF8D00FC1CFA /* TARouteCell.xib in Resources */,
 				281C0C4F1E42B6AA0006F9C0 /* TADestinationSelectionCell.xib in Resources */,
+				285845151E47FD0800FC1CFA /* TravelDetail.storyboard in Resources */,
 				285844FD1E464A3100FC1CFA /* SummaryOptions.storyboard in Resources */,
 				281C0C3C1E42A5B80006F9C0 /* Main.storyboard in Resources */,
+				2858451A1E47FE4F00FC1CFA /* TAStopCell.xib in Resources */,
 				285845021E464AE500FC1CFA /* TATravelOptionCell.xib in Resources */,
 				281C0C3E1E42A7880006F9C0 /* DestinationSelection.storyboard in Resources */,
 				281C0C3A1E42A5B80006F9C0 /* Assets.xcassets in Resources */,
@@ -396,6 +425,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				285845261E48031400FC1CFA /* TATravelDetailViewController.swift in Sources */,
+				2858451D1E47FF8D00FC1CFA /* TARouteCell.swift in Sources */,
 				281C0C4E1E42B6AA0006F9C0 /* TADestinationSelectionCell.swift in Sources */,
 				281C0C141E4279760006F9C0 /* AppDelegate.swift in Sources */,
 				281C0C441E42B0CB0006F9C0 /* TADestinationSelectionViewController.swift in Sources */,
@@ -407,6 +438,7 @@
 				2858450B1E47661600FC1CFA /* Stop.swift in Sources */,
 				285845071E4763F700FC1CFA /* Travel.swift in Sources */,
 				285845111E47712200FC1CFA /* APIManager.swift in Sources */,
+				285845191E47FE4F00FC1CFA /* TAStopCell.swift in Sources */,
 				285845131E47C56500FC1CFA /* TASegmentView.swift in Sources */,
 				285845011E464AE500FC1CFA /* TATravelOptionCell.swift in Sources */,
 				281C0C511E42BD2B0006F9C0 /* TAInitialViewController.swift in Sources */,

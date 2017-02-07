@@ -19,6 +19,8 @@ class TASummaryOptionsViewController		: UIViewController {
 
 	var travels								= [Travel]()
 
+	// MARK: - View life cycle
+
 	override func viewDidLoad() {
 		self.tableView?.register(UINib(nibName: NibNames.TravelOptionCell, bundle: nil), forCellReuseIdentifier: CellIdentifiers.travelOption.rawValue)
 
@@ -31,7 +33,19 @@ class TASummaryOptionsViewController		: UIViewController {
 			self?.travels = _travels
 		}
 	}
+
+	// Navigation
+
+	override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+		if (segue.identifier == SegueIdentifiers.toTravelDetailViewController.rawValue),
+			let travel = sender as? Travel,
+			let travelDetailViewController = segue.destination as? TATravelDetailViewController {
+				travelDetailViewController.travel = travel
+		}
+	}
 }
+
+// MARK: - Table View Methods
 
 extension TASummaryOptionsViewController: UITableViewDelegate, UITableViewDataSource {
 
@@ -56,5 +70,6 @@ extension TASummaryOptionsViewController: UITableViewDelegate, UITableViewDataSo
 
 	func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
 		tableView.deselectRow(at: indexPath, animated: true)
+		self.performSegue(withIdentifier: SegueIdentifiers.toTravelDetailViewController.rawValue, sender: travels[safe: indexPath.row])
 	}
 }

@@ -23,7 +23,7 @@
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Vg7-4a-Io4">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="backgroundColor" red="0.93725490570000003" green="0.93725490570000003" blue="0.95686274770000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <connections>
                                     <outlet property="dataSource" destination="uPc-r5-2f5" id="Nc0-b9-CCw"/>
                                     <outlet property="delegate" destination="uPc-r5-2f5" id="R4x-3q-N3J"/>
@@ -40,11 +40,20 @@
                     </view>
                     <connections>
                         <outlet property="tableView" destination="Vg7-4a-Io4" id="W9s-10-KXr"/>
+                        <segue destination="9jc-7n-UNa" kind="show" identifier="toTravelDetailViewController" id="asw-aR-4Sr"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="yBN-BT-Zh8" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="242.40000000000001" y="96.7016491754123"/>
+        </scene>
+        <!--TATravelDetailViewController-->
+        <scene sceneID="IQm-9r-0Qr">
+            <objects>
+                <viewControllerPlaceholder storyboardName="TravelDetail" referencedIdentifier="TATravelDetailViewController" id="9jc-7n-UNa" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Jct-Qq-83a" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1251" y="96"/>
         </scene>
     </scenes>
 </document>

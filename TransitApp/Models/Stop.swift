@@ -17,14 +17,6 @@ struct Stop {
 	let name		: String?
 	let properties	: [String: AnyObject]?
 
-	init(latitude: Double, longitude: Double, dateTime: Date, name: String?, properties: [String: AnyObject]?) {
-		self.latitude = latitude
-		self.longitude = longitude
-		self.dateTime = dateTime
-		self.name = name
-		self.properties = properties
-	}
-
 	static func createStopsForSegment(fromDictionaries dictionaries: [[String: AnyObject]]) -> [Stop]? {
 
 		var stopArray = [Stop]()
@@ -58,7 +50,7 @@ struct Stop {
 
 	private static func dateFromString(dateString: String) -> Date? {
 		let dateFormatter = DateFormatter()
-		dateFormatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ssZ"
+		dateFormatter.dateFormat = DateFormats.StopDateFormat
 
 		return dateFormatter.date(from: dateString)
 	}

@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11762" systemVersion="16C67" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="TAStopCell" rowHeight="20" id="KGk-i7-Jjw" customClass="TAStopCell" customModule="TransitApp" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="20"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="320" height="19.5"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1t1-Pt-hHJ">
+                        <rect key="frame" x="14" y="0.0" width="60" height="19"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="60" id="7bJ-Kk-tth"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="SdT-jw-kdf">
+                        <rect key="frame" x="84" y="0.0" width="19" height="19"/>
+                        <color key="backgroundColor" red="0.80000000000000004" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="19" id="97a-rE-kba"/>
+                            <constraint firstAttribute="width" secondItem="SdT-jw-kdf" secondAttribute="height" multiplier="1:1" id="L5N-tc-phs"/>
+                        </constraints>
+                    </view>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="A8h-ow-csK">
+                        <rect key="frame" x="130" y="0.0" width="37.5" height="19"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="F54-If-mNB">
+                        <rect key="frame" x="89" y="0.0" width="9" height="19"/>
+                        <color key="backgroundColor" red="0.80000000000000004" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="9" id="Poq-cl-rT6"/>
+                        </constraints>
+                    </view>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="rOU-4l-zcC">
+                        <rect key="frame" x="89" y="5" width="9.5" height="9.5"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </subviews>
+                <constraints>
+                    <constraint firstAttribute="bottom" secondItem="1t1-Pt-hHJ" secondAttribute="bottom" id="5CI-95-FxN"/>
+                    <constraint firstItem="1t1-Pt-hHJ" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="14" id="9jO-6w-3hf"/>
+                    <constraint firstItem="F54-If-mNB" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="AUv-JL-KIx"/>
+                    <constraint firstItem="rOU-4l-zcC" firstAttribute="height" secondItem="SdT-jw-kdf" secondAttribute="height" multiplier="1/2" id="Bxz-r2-hEz"/>
+                    <constraint firstItem="rOU-4l-zcC" firstAttribute="width" secondItem="SdT-jw-kdf" secondAttribute="width" multiplier="1/2" id="EO2-PN-gjC"/>
+                    <constraint firstItem="A8h-ow-csK" firstAttribute="leading" secondItem="SdT-jw-kdf" secondAttribute="trailing" constant="27" id="K4g-RZ-btf"/>
+                    <constraint firstAttribute="bottom" secondItem="F54-If-mNB" secondAttribute="bottom" id="PkV-bw-8Ts"/>
+                    <constraint firstItem="rOU-4l-zcC" firstAttribute="centerY" secondItem="SdT-jw-kdf" secondAttribute="centerY" id="SC2-XJ-01P"/>
+                    <constraint firstItem="F54-If-mNB" firstAttribute="centerX" secondItem="SdT-jw-kdf" secondAttribute="centerX" id="WaT-Ls-Ixo"/>
+                    <constraint firstItem="SdT-jw-kdf" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="aAo-4g-CgR"/>
+                    <constraint firstAttribute="bottom" secondItem="A8h-ow-csK" secondAttribute="bottom" id="cHe-oI-0ZS"/>
+                    <constraint firstItem="rOU-4l-zcC" firstAttribute="centerX" secondItem="SdT-jw-kdf" secondAttribute="centerX" id="e4E-Zi-hUH"/>
+                    <constraint firstItem="1t1-Pt-hHJ" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="iqC-J5-rYr"/>
+                    <constraint firstItem="A8h-ow-csK" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="oCJ-78-QeB"/>
+                    <constraint firstAttribute="bottom" secondItem="SdT-jw-kdf" secondAttribute="bottom" id="wdh-xE-XhT"/>
+                    <constraint firstItem="SdT-jw-kdf" firstAttribute="leading" secondItem="1t1-Pt-hHJ" secondAttribute="trailing" constant="10" id="yyK-zM-ctP"/>
+                </constraints>
+            </tableViewCellContentView>
+            <connections>
+                <outlet property="backgroundPointBottomConstraint" destination="PkV-bw-8Ts" id="ewO-NL-Ayw"/>
+                <outlet property="backgroundPointTopConstraint" destination="AUv-JL-KIx" id="GAf-c6-Lym"/>
+                <outlet property="backgroundPointView" destination="F54-If-mNB" id="sX8-JK-mbM"/>
+                <outlet property="heightPointView" destination="97a-rE-kba" id="Vqv-kc-1tL"/>
+                <outlet property="placeLabel" destination="A8h-ow-csK" id="Tgg-9A-ctV"/>
+                <outlet property="pointView" destination="SdT-jw-kdf" id="3dx-ul-oUu"/>
+                <outlet property="timeLabel" destination="1t1-Pt-hHJ" id="hxZ-ca-LdW"/>
+                <outlet property="whitePointView" destination="rOU-4l-zcC" id="aiX-CG-Hog"/>
+            </connections>
+        </tableViewCell>
+    </objects>
+</document>

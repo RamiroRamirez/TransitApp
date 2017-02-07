@@ -27,6 +27,7 @@ class TAInitialViewController											: UIViewController {
 	override func viewDidLoad() {
 		super.viewDidLoad()
 
+		self.title = "TransportApp"
 		self.destinationSelectionView?.alpha = AlphaForViews.DestinationSelectionView
 		self.addTapRecognizer()
 	}

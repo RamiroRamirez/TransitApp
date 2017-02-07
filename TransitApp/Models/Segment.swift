@@ -16,19 +16,8 @@ struct Segment {
 	let description	: String?
 	let color		: String
 	let iconURL		: String
-	let polyline	: String
+	let polyline	: String?
 	let stops		: [Stop]
-
-	init(name: String?, numberStops: Int, travelMode: String, description: String?, color: String, iconURL: String, polyline: String, stops: [Stop]) {
-		self.name = name
-		self.numberStops = numberStops
-		self.travelMode = travelMode
-		self.description = description
-		self.color = color
-		self.iconURL = iconURL
-		self.polyline = polyline
-		self.stops = stops
-	}
 
 	static func createSegments(fromDictionary: [[String: AnyObject]]) -> [Segment]? {
 
@@ -41,13 +30,17 @@ struct Segment {
 				let travelMode = dictionary[JSONKeys.travelMode.rawValue] as? String,
 				let color = dictionary[JSONKeys.color.rawValue] as? String,
 				let iconURL = dictionary[JSONKeys.iconURL.rawValue] as? String,
-				let polyline = dictionary[JSONKeys.polyline.rawValue] as? String,
 				let stops = Stop.createStopsForSegment(fromDictionaries: stopsDict) else {
 					return
 			}
 
 			var name: String?
 			var description: String?
+			var polyline: String?
+
+			if let _polyline = dictionary[JSONKeys.polyline.rawValue] as? String {
+				polyline = _polyline
+			}
 
 			if let _name = dictionary[JSONKeys.name.rawValue] as? String {
 				name = _name

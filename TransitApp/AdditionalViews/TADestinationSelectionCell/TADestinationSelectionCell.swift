@@ -24,6 +24,7 @@ class TADestinationSelectionCell				: UITableViewCell {
 	var searchPressedBlock						: (() -> Void)?
 
 	// MARK: - Setup Methods
+
 	func setupCell(selectionOptionType: DestinationSelectionOption, showDateSelectionBlock: (() -> Void)?, userInputBlock: ((_ parameter: String, _ value: String?) -> Void)?, searchPressedBlock: (() -> Void)?, parametersDictionary: [String: Any]) {
 
 		self.selectionStyle = .none
@@ -49,7 +50,7 @@ class TADestinationSelectionCell				: UITableViewCell {
 		self.inputTextField?.isHidden = (selectionOptionType == .search)
 	}
 
-	// AMRK: - General Helpers
+	// MARK: - General Helpers
 
 	private func textFromParameterDictionary(selectionOptionType: DestinationSelectionOption, parametersDictionary: [String: Any]) -> String? {
 
@@ -79,7 +80,7 @@ class TADestinationSelectionCell				: UITableViewCell {
 				return "\(firstStringPart) Tomorrow \(dateFormatter.string(from: _date))"
 			}
 
-			dateFormatter.dateFormat = "EEEEEE, dd MMM, H:mm"
+			dateFormatter.dateFormat = DateFormats.DateInDestinationCell
 			return "\(firstStringPart) \(dateFormatter.string(from: _date))"
 		}
 

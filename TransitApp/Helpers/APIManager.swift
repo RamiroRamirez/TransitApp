@@ -38,6 +38,5 @@ struct APIManager {
 		})
 
 		completionBlock?(travelsArray, nil)
-
 	}
 }

@@ -21,7 +21,21 @@ class TASegmentView: UIView {
 
 	func setupView(segment: Segment) {
 
-		self.titleLabel?.text = segment.name
+		self.titleLabel?.text = nil
+
+		if segment.name != nil {
+			self.titleLabel?.text = segment.name
+
+		} else if(segment.travelMode == JSONKeys.walking.rawValue) {
+			self.titleLabel?.text = "walk"
+
+		} else if (segment.travelMode == JSONKeys.ciclying.rawValue) {
+			self.titleLabel?.text = "cycling"
+
+		} else if (segment.travelMode == JSONKeys.driving.rawValue) {
+			self.titleLabel?.text = "driving"
+		}
+
 		self.imageView?.isHidden = true
 		self.backgroundColor = UIColor(fromHexString: segment.color)
 		self.layer.cornerRadius = CornerRadius.Standard
