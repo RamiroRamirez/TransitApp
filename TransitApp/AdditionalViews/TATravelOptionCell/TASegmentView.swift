@@ -34,7 +34,6 @@ class TASegmentView: UIView {
 
 		} else if (segment.travelMode == JSONKeys.driving.rawValue) {
 			self.titleLabel?.text = "driving"
-
 		}
 
 		self.imageView?.isHidden = true
