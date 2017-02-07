@@ -43,6 +43,7 @@ class TAStopCell												: UITableViewCell {
 		self.pointView?.backgroundColor = color
 		self.backgroundPointView?.backgroundColor = color
 
+		// if it is the first/last row of the route draw, hide the backgroung point to make them look like start/end points 
 		guard
 			let _backgroundPointTopConstantConstraint = self.backgroundPointTopConstraint?.constant,
 			let _backgroundPointBottomConstantConstraint = self.backgroundPointBottomConstraint?.constant else {
