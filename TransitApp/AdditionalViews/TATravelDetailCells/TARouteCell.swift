@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import DKHelper
 
 class TARouteCell									: UITableViewCell {
 
@@ -26,7 +27,7 @@ class TARouteCell									: UITableViewCell {
 		self.transportNameTitle?.text = (nameText ?? segment.travelMode)
 
 		// show the number of stops, if there is one
-		let numberOfStops: String? = ((segment.numberStops != 0) ? "\(segment.numberStops) stops" : nil)
+		let numberOfStops: String? = ((segment.numberStops != 0) ? "\(segment.numberStops) \(L("stops"))" : nil)
 		self.detailsTitle?.text = numberOfStops
 
 		// set the color of the segment/route

@@ -1,0 +1,29 @@
+/* 
+  Localizable.strings
+  TransitApp
+
+  Created by Ramiro Ramirez on 08/02/2017.
+  Copyright © 2017 ramram. All rights reserved.
+*/
+
+"Arrive.Destination" 	= "Arrive";
+"Depart.Destination" 	= "Depart";
+
+"Today"					= "Today";
+"Yesterday"				= "Yesterday";
+"Tomorrow"				= "Tomorrow";
+
+"Travel.Start"			= "Start";
+"Travel.End"			= "Tomorrow";
+"Travel.When"			= "When";
+
+"Your.location"			= "Your location";
+"Where.To.Placeholder"	= "Where to";
+"Departure.Placeholder"	= "Depart now";
+
+"TransportApp"			= "TransportApp";
+"stops"					= "stops";
+"Travel.Mode.Walk"		= "walk";
+"Travel.Mode.Cycling"	= "cycling";
+"Travel.Mode.Driving"	= "driving";
+"Minutes"				= "min";

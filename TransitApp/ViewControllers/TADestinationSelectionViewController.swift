@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import DKHelper
 
 // MARK: - Enum to populate DestinationSelectionViewController
 
@@ -23,16 +24,16 @@ enum DestinationSelectionOption	: Int {
 
 	func title() -> String? {
 		switch self {
-		case .start				: return "Start"
-		case .end				: return "End"
-		case .time				: return "When"
+		case .start				: return L("Travel.Start")
+		case .end				: return L("Travel.End")
+		case .time				: return L("Travel.When")
 		case .search			: return nil
 		}
 	}
 
 	func deafaulText() -> String? {
 		switch self {
-		case .start				: return "Your location"
+		case .start				: return L("Your.location")
 		case .end				: return nil
 		case .time				: return nil
 		case .search			: return nil
@@ -42,8 +43,8 @@ enum DestinationSelectionOption	: Int {
 	func placeholder() -> String? {
 		switch self {
 		case .start				: return nil
-		case .end				: return "Where to"
-		case .time				: return "Depart now"
+		case .end				: return L("Where.To.Placeholder")
+		case .time				: return L("Departure.Placeholder")
 		case .search			: return nil
 		}
 	}

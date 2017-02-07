@@ -38,6 +38,7 @@
 		285845261E48031400FC1CFA /* TATravelDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 285845251E48031400FC1CFA /* TATravelDetailViewController.swift */; };
 		287CAEB71E4A6B2300459FBB /* TANavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 287CAEB61E4A6B2300459FBB /* TANavigationController.swift */; };
 		287CAEB91E4A7AA000459FBB /* TATravelOptionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 285844FF1E464AE500FC1CFA /* TATravelOptionCell.swift */; };
+		287CAEBC1E4A8A3F00459FBB /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 287CAEBE1E4A8A3F00459FBB /* Localizable.strings */; };
 		28F0DAA31E43B9C5003CC0D3 /* TADatePickerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28F0DAA21E43B9C5003CC0D3 /* TADatePickerViewController.swift */; };
 		4A74F7AE93D1B90EDCEA458E /* Pods_TransitAppTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BE1317442D2FA1A4A8FE7C4B /* Pods_TransitAppTests.framework */; };
 		FCCC468D8D65C103815E18CB /* Pods_TransitApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 130B0B1465AFA00AE7D09EEA /* Pods_TransitApp.framework */; };
@@ -90,6 +91,7 @@
 		2858451C1E47FF8D00FC1CFA /* TARouteCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TARouteCell.xib; sourceTree = "<group>"; };
 		285845251E48031400FC1CFA /* TATravelDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TATravelDetailViewController.swift; sourceTree = "<group>"; };
 		287CAEB61E4A6B2300459FBB /* TANavigationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TANavigationController.swift; sourceTree = "<group>"; };
+		287CAEBD1E4A8A3F00459FBB /* Base */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = Base; path = Base.lproj/Localizable.strings; sourceTree = "<group>"; };
 		28F0DAA21E43B9C5003CC0D3 /* TADatePickerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TADatePickerViewController.swift; sourceTree = "<group>"; };
 		2A4E0194FEB9E0E3BD25C458 /* Pods-TransitAppTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TransitAppTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-TransitAppTests/Pods-TransitAppTests.release.xcconfig"; sourceTree = "<group>"; };
 		4F43FEADED1C77C814CDF7A9 /* Pods-TransitApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TransitApp.debug.xcconfig"; path = "Pods/Target Support Files/Pods-TransitApp/Pods-TransitApp.debug.xcconfig"; sourceTree = "<group>"; };
@@ -205,6 +207,7 @@
 				281C0C411E42AD100006F9C0 /* DateSelection.storyboard */,
 				285844FC1E464A3100FC1CFA /* SummaryOptions.storyboard */,
 				285845141E47FD0800FC1CFA /* TravelDetail.storyboard */,
+				287CAEBE1E4A8A3F00459FBB /* Localizable.strings */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -371,6 +374,7 @@
 				285845021E464AE500FC1CFA /* TATravelOptionCell.xib in Resources */,
 				281C0C3E1E42A7880006F9C0 /* DestinationSelection.storyboard in Resources */,
 				281C0C3A1E42A5B80006F9C0 /* Assets.xcassets in Resources */,
+				287CAEBC1E4A8A3F00459FBB /* Localizable.strings in Resources */,
 				281C0C3B1E42A5B80006F9C0 /* LaunchScreen.storyboard in Resources */,
 				2858450F1E47708E00FC1CFA /* data.json in Resources */,
 				281C0C421E42AD100006F9C0 /* DateSelection.storyboard in Resources */,
@@ -523,11 +527,23 @@
 		};
 /* End PBXTargetDependency section */
 
+/* Begin PBXVariantGroup section */
+		287CAEBE1E4A8A3F00459FBB /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				287CAEBD1E4A8A3F00459FBB /* Base */,
+			);
+			name = Localizable.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
 /* Begin XCBuildConfiguration section */
 		281C0C2B1E4279760006F9C0 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
 				CLANG_CXX_LIBRARY = "libc++";
@@ -578,6 +594,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
 				CLANG_CXX_LIBRARY = "libc++";
