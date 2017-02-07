@@ -17,14 +17,6 @@ struct Stop {
 	let name		: String?
 	let properties	: [String: AnyObject]?
 
-//	init(latitude: Double, longitude: Double, dateTime: Date, name: String?, properties: [String: AnyObject]?) {
-//		self.latitude = latitude
-//		self.longitude = longitude
-//		self.dateTime = dateTime
-//		self.name = name
-//		self.properties = properties
-//	}
-
 	static func createStopsForSegment(fromDictionaries dictionaries: [[String: AnyObject]]) -> [Stop]? {
 
 		var stopArray = [Stop]()

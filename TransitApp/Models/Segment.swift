@@ -19,17 +19,6 @@ struct Segment {
 	let polyline	: String?
 	let stops		: [Stop]
 
-//	init(name: String?, numberStops: Int, travelMode: String, description: String?, color: String, iconURL: String, polyline: String?, stops: [Stop]) {
-//		self.name = name
-//		self.numberStops = numberStops
-//		self.travelMode = travelMode
-//		self.description = description
-//		self.color = color
-//		self.iconURL = iconURL
-//		self.polyline = polyline
-//		self.stops = stops
-//	}
-
 	static func createSegments(fromDictionary: [[String: AnyObject]]) -> [Segment]? {
 
 		var segmentsArray = [Segment]()

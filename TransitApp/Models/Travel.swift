@@ -16,14 +16,6 @@ struct Travel {
 	let segments	: [Segment]
 	let properties	: [String: AnyObject]?
 
-//	init(type: String, provider: String, price: Price, segments: [Segment], properties: [String: AnyObject]?) {
-//		self.type = type
-//		self.provider = provider
-//		self.price = price
-//		self.segments = segments
-//		self.properties = properties
-//	}
-
 	static func createTravel(withDicionary dictionary: [String: AnyObject]) -> Travel? {
 
 		guard

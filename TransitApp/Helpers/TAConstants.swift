@@ -50,6 +50,8 @@ enum JSONKeys: String {
 	case change									= "change"
 	case setup									= "setup"
 	case parking								= "parking"
+	case ciclying								= "cycling"
+	case driving								= "driving"
 }
 
 struct Resources {
