@@ -23,7 +23,9 @@ class TATravelOptionCell									: UITableViewCell {
 
 	// MARK: - Properties
 
-	var travel												: Travel?
+	private var travel										: Travel?
+
+	// MARK: - Setup cell
 
 	func setupCell(travel: Travel) {
 		self.travel = travel
@@ -35,6 +37,8 @@ class TATravelOptionCell									: UITableViewCell {
 		self.startEndTime?.text = self.rangeOfTimeToShow()
 		self.showNeededSegmentViews()
 	}
+
+	// MARK: - Time presentation methods
 
 	fileprivate func calculateTotalTimeString() -> String? {
 		guard
@@ -67,14 +71,20 @@ class TATravelOptionCell									: UITableViewCell {
 		return "\(startTime) -> \(endTime)"
 	}
 
+	// MARK: - Showing views for segments
+
 	fileprivate func showNeededSegmentViews() {
 
-		let numberOfSegments = (self.travel?.segments.count ?? 0)
+		let segmentFiltered = self.travel?.segments.filter({ (segment: Segment) -> Bool in
+			return (segment.travelMode != JSONKeys.change.rawValue && segment.travelMode != JSONKeys.setup.rawValue && segment.travelMode != JSONKeys.parking.rawValue)
+		})
+
+		let numberOfSegments = (segmentFiltered?.count ?? 0)
 
 		var numberOfShownSegmentViews = 0
 		for segmentView in (self.segmentViews ?? []) {
 			if (numberOfShownSegmentViews < numberOfSegments),
-				let _segment = self.travel?.segments[safe: numberOfShownSegmentViews] {
+				let _segment = segmentFiltered?[safe: numberOfShownSegmentViews] {
 					segmentView.isHidden = false
 					segmentView.setupView(segment: _segment)
 					numberOfShownSegmentViews += 1

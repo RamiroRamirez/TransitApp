@@ -12,12 +12,16 @@ import UIKit
 enum CellIdentifiers: String {
 	case startSelection 						= "TADestinationSelectionCell"
 	case travelOption							= "TATravelOptionCell"
+	case stop									= "TAStopCell"
+	case route									= "TARouteCell"
+	case changeWalk								= "TAChangeWalkCell"
 }
 
 enum SegueIdentifiers: String {
 	case toDestinationSelectionViewController	= "toDestinationSelectionViewController"
 	case toDateSelectionViewController			= "toDateSelectionViewController"
 	case toSummaryOptionsViewController			= "toSummaryOptionsViewController"
+	case toTravelDetailViewController			= "toTravelDetailViewController"
 }
 
 enum JSONKeys: String {
@@ -42,6 +46,10 @@ enum JSONKeys: String {
 	case latitude								= "lat"
 	case longitude								= "lng"
 	case dateTime								= "datetime"
+	case walking								= "walking"
+	case change									= "change"
+	case setup									= "setup"
+	case parking								= "parking"
 }
 
 struct Resources {
@@ -52,11 +60,16 @@ struct Resources {
 struct CellHeights {
 	static let DestinationSelection				= CGFloat(50)
 	static let TravelOption						= CGFloat(170)
+	static let Route							= CGFloat(120)
+	static let Stop								= CGFloat(19)
 }
 
 struct NibNames {
 	static let DestinationSelectionCell			= "TADestinationSelectionCell"
 	static let TravelOptionCell					= "TATravelOptionCell"
+	static let StopCell							= "TAStopCell"
+	static let RouteCell						= "TARouteCell"
+	static let ChangeWalkCell					= "TAChangeWalkCell"
 }
 
 struct AlphaForViews {
@@ -86,6 +99,8 @@ struct SearchParametersKeys {
 
 struct GeneralHelpers {
 	static let AmountFactor						= Double(100)
+	static let CornerRadiusPointFactor			= CGFloat(0.5)
+	static let CornerRadiusBackgroundPointFactor = CGFloat(0.25)
 }
 
 extension Array {
