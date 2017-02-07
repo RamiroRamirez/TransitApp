@@ -87,7 +87,17 @@ extension TATravelDetailViewController		: UITableViewDelegate, UITableViewDataSo
 				cell.selectionStyle = .none
 				return cell
 
+		/*
 		// Segments are in even rows
+		// to get the correct segment to show, the relation between indexPath and the index of segement data source is like:
+			IndexPath			index in datasource
+				2      ------>  	 0
+				4	   ------> 		 1
+				6	   ------>		 2
+			   ...	   ------>	    ...
+			
+			For this reason, "Int((Double(indexPath.row) * 0.5) - 1" needs to be done
+		*/
 		} else if (indexPath.row % 2 == 0),
 			let cell = tableView.dequeueReusableCell(withIdentifier: CellIdentifiers.route.rawValue) as? TARouteCell,
 			let segment = self.filteredSegmentsToShow?[safe: Int((Double(indexPath.row) * 0.5) - 1)] {
@@ -95,7 +105,17 @@ extension TATravelDetailViewController		: UITableViewDelegate, UITableViewDataSo
 				cell.selectionStyle = .none
 				return cell
 
+		/*
 		// Stops are in odd rows
+		// to get the correct segment to show, the relation between indexPath and the index of stop data source is like:
+			IndexPath			index in datasource
+				1      ------>  	 0
+				3	   ------> 		 1
+				5	   ------>		 2
+				...	   ------>	    ...
+
+			For this reason, "Int((Double(indexPath.row - 1) * 0.5))" needs to be done
+			*/
 		} else if
 			let cell = tableView.dequeueReusableCell(withIdentifier: CellIdentifiers.stop.rawValue) as? TAStopCell,
 			let stop = self.filteredStopsToShow?[safe: Int((Double(indexPath.row - 1) * 0.5))] {
@@ -106,11 +126,12 @@ extension TATravelDetailViewController		: UITableViewDelegate, UITableViewDataSo
 						return (_stop.longitude == stop.longitude && _stop.latitude == stop.latitude)
 					}))
 				}).first {
-				let isIndexPathToHideUp = (indexPath.row == 1)
-				let isIndexPathToHideDown = (indexPath.row == (self.numberOfRowsForTableView() - 1))
-				cell.setupCell(stop: stop, segment: segementArray, hideBackgroundPoint: (isIndexPathToHideUp, isIndexPathToHideDown))
-				cell.selectionStyle = .none
-				return cell
+
+					let isIndexPathToHideUp = (indexPath.row == 1)
+					let isIndexPathToHideDown = (indexPath.row == (self.numberOfRowsForTableView() - 1))
+					cell.setupCell(stop: stop, segment: segementArray, hideBackgroundPoint: (isIndexPathToHideUp, isIndexPathToHideDown))
+					cell.selectionStyle = .none
+					return cell
 			}
 		}
 
@@ -121,6 +142,7 @@ extension TATravelDetailViewController		: UITableViewDelegate, UITableViewDataSo
 		if (indexPath.row == 0) {
 			return CellHeights.TravelOption
 
+		// Segment cells are in even rows
 		} else if (indexPath.row % 2 == 0) {
 			return CellHeights.Route
 		}
