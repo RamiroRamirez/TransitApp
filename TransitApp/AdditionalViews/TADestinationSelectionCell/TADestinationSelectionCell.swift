@@ -80,7 +80,7 @@ class TADestinationSelectionCell				: UITableViewCell {
 				return "\(firstStringPart) Tomorrow \(dateFormatter.string(from: _date))"
 			}
 
-			dateFormatter.dateFormat = "EEEEEE, dd MMM, H:mm"
+			dateFormatter.dateFormat = DateFormats.DateInDestinationCell
 			return "\(firstStringPart) \(dateFormatter.string(from: _date))"
 		}
 

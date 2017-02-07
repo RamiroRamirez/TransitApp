@@ -105,6 +105,11 @@ struct GeneralHelpers {
 	static let CornerRadiusBackgroundPointFactor = CGFloat(0.25)
 }
 
+struct DateFormats {
+	static let StopDateFormat					= "yyyy-MM-dd'T'HH:mm:ssZ"
+	static let DateInDestinationCell			= "EEEEEE, dd MMM, H:mm"
+}
+
 extension Array {
 	/*
 	* Bounds-checked ("safe") index lookup for Arrays.

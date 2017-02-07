@@ -50,7 +50,7 @@ struct Stop {
 
 	private static func dateFromString(dateString: String) -> Date? {
 		let dateFormatter = DateFormatter()
-		dateFormatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ssZ"
+		dateFormatter.dateFormat = DateFormats.StopDateFormat
 
 		return dateFormatter.date(from: dateString)
 	}

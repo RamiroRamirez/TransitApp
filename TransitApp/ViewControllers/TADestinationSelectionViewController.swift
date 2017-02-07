@@ -115,9 +115,9 @@ class TADestinationSelectionViewController		: UIViewController {
 	// MARK: - General Helpers
 
 	func isAllSearchInformationCompleted() -> Bool {
-		guard (searchParametersDictionary[SearchParametersKeys.Start] != nil &&
-			   searchParametersDictionary[SearchParametersKeys.End] != nil &&
-			   (searchParametersDictionary[SearchParametersKeys.ArriveDate] != nil || searchParametersDictionary[SearchParametersKeys.DepartureDate] != nil)) else {
+		guard (self.searchParametersDictionary[SearchParametersKeys.Start] != nil &&
+			   self.searchParametersDictionary[SearchParametersKeys.End] != nil &&
+			   (self.searchParametersDictionary[SearchParametersKeys.ArriveDate] != nil || self.searchParametersDictionary[SearchParametersKeys.DepartureDate] != nil)) else {
 			return false
 		}
 

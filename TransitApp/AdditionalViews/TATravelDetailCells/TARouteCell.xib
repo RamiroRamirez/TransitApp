@@ -20,28 +20,28 @@
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="BYa-gM-NGL">
-                        <rect key="frame" x="87" y="0.0" width="13" height="119.5"/>
+                        <rect key="frame" x="89" y="0.0" width="9" height="119.5"/>
                         <color key="backgroundColor" red="0.80000000000000004" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
-                            <constraint firstAttribute="width" constant="13" id="wAs-JG-vrZ"/>
+                            <constraint firstAttribute="width" constant="9" id="wAs-JG-vrZ"/>
                         </constraints>
                     </view>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0Ea-Jd-jza">
-                        <rect key="frame" x="127" y="14" width="42" height="20.5"/>
+                        <rect key="frame" x="130" y="14" width="42" height="20.5"/>
                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NSF-At-dX5">
-                        <rect key="frame" x="127" y="79.5" width="37.5" height="18"/>
+                        <rect key="frame" x="125" y="79.5" width="37.5" height="18"/>
                         <fontDescription key="fontDescription" type="system" pointSize="15"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
                 </subviews>
                 <constraints>
-                    <constraint firstItem="0Ea-Jd-jza" firstAttribute="leading" secondItem="BYa-gM-NGL" secondAttribute="trailing" constant="27" id="1pM-cM-sx6"/>
-                    <constraint firstItem="BYa-gM-NGL" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="87" id="54E-kY-U2i"/>
+                    <constraint firstItem="0Ea-Jd-jza" firstAttribute="leading" secondItem="BYa-gM-NGL" secondAttribute="trailing" constant="32" id="1pM-cM-sx6"/>
+                    <constraint firstItem="BYa-gM-NGL" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="89" id="54E-kY-U2i"/>
                     <constraint firstItem="NSF-At-dX5" firstAttribute="leading" secondItem="BYa-gM-NGL" secondAttribute="trailing" constant="27" id="9cl-Nf-N5s"/>
                     <constraint firstAttribute="bottomMargin" secondItem="NSF-At-dX5" secondAttribute="bottom" constant="14" id="Hi8-gl-rdO"/>
                     <constraint firstItem="BYa-gM-NGL" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="QIr-k9-Kcg"/>

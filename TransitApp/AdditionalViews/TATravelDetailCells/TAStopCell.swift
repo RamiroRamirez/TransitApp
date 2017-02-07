@@ -8,16 +8,18 @@
 
 import UIKit
 
-class TAStopCell									: UITableViewCell {
+class TAStopCell												: UITableViewCell {
 
 	// MARK: - Outlets
 
-	@IBOutlet private weak var timeLabel			: UILabel?
-	@IBOutlet private weak var pointView			: UIView?
-	@IBOutlet private weak var whitePointView		: UIView?
-	@IBOutlet private weak var backgroundPointView	: UIView?
-	@IBOutlet private weak var placeLabel			: UILabel?
-	@IBOutlet private weak var heightPointView		: NSLayoutConstraint?
+	@IBOutlet private weak var timeLabel						: UILabel?
+	@IBOutlet private weak var pointView						: UIView?
+	@IBOutlet private weak var whitePointView					: UIView?
+	@IBOutlet private weak var backgroundPointView				: UIView?
+	@IBOutlet private weak var placeLabel						: UILabel?
+	@IBOutlet private weak var heightPointView					: NSLayoutConstraint?
+	@IBOutlet private weak var backgroundPointTopConstraint		: NSLayoutConstraint?
+	@IBOutlet private weak var backgroundPointBottomConstraint	: NSLayoutConstraint?
 
 	// MARK: - View life cycle
 
@@ -30,7 +32,7 @@ class TAStopCell									: UITableViewCell {
 
 	// MARK: - Setup cell
 
-	func setupCell(stop: Stop, segment: Segment) {
+	func setupCell(stop: Stop, segment: Segment, hideBackgroundPoint: (hideUp: Bool, hideDown: Bool)) {
 
 		let dateFormatter = DateFormatter()
 		dateFormatter.timeStyle = .short
@@ -40,5 +42,14 @@ class TAStopCell									: UITableViewCell {
 		let color = UIColor(fromHexString: segment.color)
 		self.pointView?.backgroundColor = color
 		self.backgroundPointView?.backgroundColor = color
+
+		guard
+			let _backgroundPointTopConstantConstraint = self.backgroundPointTopConstraint?.constant,
+			let _backgroundPointBottomConstantConstraint = self.backgroundPointBottomConstraint?.constant else {
+				return
+		}
+
+		self.backgroundPointTopConstraint?.constant = ((hideBackgroundPoint.hideUp == true) ? 10 : _backgroundPointTopConstantConstraint)
+		self.backgroundPointBottomConstraint?.constant = ((hideBackgroundPoint.hideDown == true) ? 10 : _backgroundPointBottomConstantConstraint)
 	}
 }

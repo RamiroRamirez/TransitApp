@@ -84,6 +84,7 @@ extension TATravelDetailViewController		: UITableViewDelegate, UITableViewDataSo
 			let cell = tableView.dequeueReusableCell(withIdentifier: CellIdentifiers.travelOption.rawValue) as? TATravelOptionCell,
 			let _travel = self.travel {
 				cell.setupCell(travel: _travel)
+				cell.selectionStyle = .none
 				return cell
 
 		// Segments are in even rows
@@ -91,6 +92,7 @@ extension TATravelDetailViewController		: UITableViewDelegate, UITableViewDataSo
 			let cell = tableView.dequeueReusableCell(withIdentifier: CellIdentifiers.route.rawValue) as? TARouteCell,
 			let segment = self.filteredSegmentsToShow?[safe: Int((Double(indexPath.row) * 0.5) - 1)] {
 				cell.setupCell(segment: segment)
+				cell.selectionStyle = .none
 				return cell
 
 		// Stops are in odd rows
@@ -104,7 +106,10 @@ extension TATravelDetailViewController		: UITableViewDelegate, UITableViewDataSo
 						return (_stop.longitude == stop.longitude && _stop.latitude == stop.latitude)
 					}))
 				}).first {
-				cell.setupCell(stop: stop, segment: segementArray)
+				let isIndexPathToHideUp = (indexPath.row == 1)
+				let isIndexPathToHideDown = (indexPath.row == (self.numberOfRowsForTableView() - 1))
+				cell.setupCell(stop: stop, segment: segementArray, hideBackgroundPoint: (isIndexPathToHideUp, isIndexPathToHideDown))
+				cell.selectionStyle = .none
 				return cell
 			}
 		}
