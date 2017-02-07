@@ -24,8 +24,10 @@ class TASummaryOptionsViewController		: UIViewController {
 	override func viewDidLoad() {
 		self.tableView?.register(UINib(nibName: NibNames.TravelOptionCell, bundle: nil), forCellReuseIdentifier: CellIdentifiers.travelOption.rawValue)
 
+		let progressHUD = MBProgressHUD.showAdded(to: self.view, animated: true)
 		APIManager.fetchTransportOptions { [weak self] (travels: [Travel]?, error: NSError?) in
 
+			progressHUD.hide(animated: true)
 			guard let _travels = travels else {
 				return
 			}

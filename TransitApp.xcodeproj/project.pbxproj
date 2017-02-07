@@ -37,6 +37,7 @@
 		2858451D1E47FF8D00FC1CFA /* TARouteCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2858451B1E47FF8D00FC1CFA /* TARouteCell.swift */; };
 		2858451E1E47FF8D00FC1CFA /* TARouteCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2858451C1E47FF8D00FC1CFA /* TARouteCell.xib */; };
 		285845261E48031400FC1CFA /* TATravelDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 285845251E48031400FC1CFA /* TATravelDetailViewController.swift */; };
+		287CAEB71E4A6B2300459FBB /* TANavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 287CAEB61E4A6B2300459FBB /* TANavigationController.swift */; };
 		28F0DAA31E43B9C5003CC0D3 /* TADatePickerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28F0DAA21E43B9C5003CC0D3 /* TADatePickerViewController.swift */; };
 		FCCC468D8D65C103815E18CB /* Pods_TransitApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 130B0B1465AFA00AE7D09EEA /* Pods_TransitApp.framework */; };
 /* End PBXBuildFile section */
@@ -87,6 +88,7 @@
 		2858451B1E47FF8D00FC1CFA /* TARouteCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TARouteCell.swift; sourceTree = "<group>"; };
 		2858451C1E47FF8D00FC1CFA /* TARouteCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TARouteCell.xib; sourceTree = "<group>"; };
 		285845251E48031400FC1CFA /* TATravelDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TATravelDetailViewController.swift; sourceTree = "<group>"; };
+		287CAEB61E4A6B2300459FBB /* TANavigationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TANavigationController.swift; sourceTree = "<group>"; };
 		28F0DAA21E43B9C5003CC0D3 /* TADatePickerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TADatePickerViewController.swift; sourceTree = "<group>"; };
 		4F43FEADED1C77C814CDF7A9 /* Pods-TransitApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TransitApp.debug.xcconfig"; path = "Pods/Target Support Files/Pods-TransitApp/Pods-TransitApp.debug.xcconfig"; sourceTree = "<group>"; };
 		D34749BA02E0974111D31C55 /* Pods-TransitApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TransitApp.release.xcconfig"; path = "Pods/Target Support Files/Pods-TransitApp/Pods-TransitApp.release.xcconfig"; sourceTree = "<group>"; };
@@ -177,6 +179,7 @@
 		281C0C351E42A5640006F9C0 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				287CAEB61E4A6B2300459FBB /* TANavigationController.swift */,
 				281C0C501E42BD2B0006F9C0 /* TAInitialViewController.swift */,
 				281C0C431E42B0CB0006F9C0 /* TADestinationSelectionViewController.swift */,
 				28F0DAA21E43B9C5003CC0D3 /* TADatePickerViewController.swift */,
@@ -427,6 +430,7 @@
 			files = (
 				285845261E48031400FC1CFA /* TATravelDetailViewController.swift in Sources */,
 				2858451D1E47FF8D00FC1CFA /* TARouteCell.swift in Sources */,
+				287CAEB71E4A6B2300459FBB /* TANavigationController.swift in Sources */,
 				281C0C4E1E42B6AA0006F9C0 /* TADestinationSelectionCell.swift in Sources */,
 				281C0C141E4279760006F9C0 /* AppDelegate.swift in Sources */,
 				281C0C441E42B0CB0006F9C0 /* TADestinationSelectionViewController.swift in Sources */,
