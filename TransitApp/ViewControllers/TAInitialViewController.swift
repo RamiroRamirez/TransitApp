@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import DKHelper
 
 class TAInitialViewController											: UIViewController {
 
@@ -27,7 +28,7 @@ class TAInitialViewController											: UIViewController {
 	override func viewDidLoad() {
 		super.viewDidLoad()
 
-		self.title = "TransportApp"
+		self.title = L("TransportApp")
 		self.destinationSelectionView?.alpha = AlphaForViews.DestinationSelectionView
 		self.addTapRecognizer()
 	}

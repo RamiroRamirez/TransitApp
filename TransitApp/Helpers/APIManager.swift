@@ -23,6 +23,7 @@ struct APIManager {
 	static func fetchTransportOptions(completionBlock: ((_ travels: [Travel]?, _ error: NSError?) -> Void)?) {
 
 		guard let travelsInformation = self.loadDataJSON(jsonName: Resources.TransportData) as? [String: AnyObject] else {
+			// Simulate error... there is no connection to server in this example
 			let error =  NSError(domain: "", code: 400, userInfo:nil)
 			completionBlock?(nil, error)
 			return

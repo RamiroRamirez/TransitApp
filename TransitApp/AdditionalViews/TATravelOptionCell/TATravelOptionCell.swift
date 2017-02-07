@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import DKHelper
 
 class TATravelOptionCell									: UITableViewCell {
 
@@ -44,7 +45,7 @@ class TATravelOptionCell									: UITableViewCell {
 				return nil
 		}
 
-		return "\(totalTimeInMinutes) min"
+		return "\(totalTimeInMinutes) \(L("Minutes"))"
 	}
 
 	fileprivate func rangeOfTimeToShow(travel: Travel?) -> String? {

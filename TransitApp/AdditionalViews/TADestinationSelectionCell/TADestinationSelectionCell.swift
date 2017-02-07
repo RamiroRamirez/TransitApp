@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import DKHelper
 
 class TADestinationSelectionCell				: UITableViewCell {
 
@@ -55,7 +56,7 @@ class TADestinationSelectionCell				: UITableViewCell {
 	private func textFromParameterDictionary(selectionOptionType: DestinationSelectionOption, parametersDictionary: [String: Any]) -> String? {
 
 		func stringForArriveOrDeparture() -> String {
-			return ((parametersDictionary[SearchParametersKeys.ArriveDate] != nil) ? "Arrive" : "Depart")
+			return ((parametersDictionary[SearchParametersKeys.ArriveDate] != nil) ? L("Arrive.Destination") : L("Depart.Destination"))
 		}
 
 		func dateInfosToShow(date: Date?) -> String? {
@@ -71,13 +72,13 @@ class TADestinationSelectionCell				: UITableViewCell {
 
 			let calendar = NSCalendar.current
 			if (calendar.isDateInToday(_date) == true) {
-				return "\(firstStringPart) Today \(dateFormatter.string(from: _date))"
+				return "\(firstStringPart) \(L("Today")) \(dateFormatter.string(from: _date))"
 
 			} else if (calendar.isDateInYesterday(_date) == true) {
-				return "\(firstStringPart) Yesterday \(dateFormatter.string(from: _date))"
+				return "\(firstStringPart) \(L("Yesterday")) \(dateFormatter.string(from: _date))"
 
 			} else if (calendar.isDateInTomorrow(_date)){
-				return "\(firstStringPart) Tomorrow \(dateFormatter.string(from: _date))"
+				return "\(firstStringPart) \(L("Tomorrow")) \(dateFormatter.string(from: _date))"
 			}
 
 			dateFormatter.dateFormat = DateFormats.DateInDestinationCell

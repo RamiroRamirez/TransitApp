@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import DKHelper
 
 class TASegmentView: UIView {
 
@@ -27,13 +28,13 @@ class TASegmentView: UIView {
 			self.titleLabel?.text = segment.name
 
 		} else if(segment.travelMode == JSONKeys.walking.rawValue) {
-			self.titleLabel?.text = "walk"
+			self.titleLabel?.text = L("Travel.Mode.Walk")
 
 		} else if (segment.travelMode == JSONKeys.ciclying.rawValue) {
-			self.titleLabel?.text = "cycling"
+			self.titleLabel?.text = L("Travel.Mode.Cycling")
 
 		} else if (segment.travelMode == JSONKeys.driving.rawValue) {
-			self.titleLabel?.text = "driving"
+			self.titleLabel?.text = L("Travel.Mode.Driving")
 		}
 
 		self.imageView?.isHidden = true
