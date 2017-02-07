@@ -21,29 +21,24 @@ class TATravelOptionCell									: UITableViewCell {
 
 	@IBOutlet var segmentViews								: [TASegmentView]?
 
-	// MARK: - Properties
-
-	private var travel										: Travel?
-
 	// MARK: - Setup cell
 
 	func setupCell(travel: Travel) {
-		self.travel = travel
 
 		self.mainContainerView?.layer.cornerRadius = CornerRadius.Standard
 		self.titleLabel?.text = travel.type
 		self.priceLabel?.text = "\(travel.price.amount / GeneralHelpers.AmountFactor) \(travel.price.currency)"
-		self.timeLabel?.text = self.calculateTotalTimeString()
-		self.startEndTime?.text = self.rangeOfTimeToShow()
-		self.showNeededSegmentViews()
+		self.timeLabel?.text = self.calculateTotalTimeString(travel: travel)
+		self.startEndTime?.text = self.rangeOfTimeToShow(travel: travel)
+		self.showNeededSegmentViews(travel: travel)
 	}
 
 	// MARK: - Time presentation methods
 
-	fileprivate func calculateTotalTimeString() -> String? {
+	func calculateTotalTimeString(travel: Travel?) -> String? {
 		guard
-			let firstSegment = self.travel?.segments.first,
-			let lastSegment = self.travel?.segments.last,
+			let firstSegment = travel?.segments.first,
+			let lastSegment = travel?.segments.last,
 			let firstStop = firstSegment.stops.first,
 			let totalTimeInMinutes = lastSegment.stops.last?.dateTime.minutes(from: firstStop.dateTime) else {
 				return nil
@@ -52,10 +47,10 @@ class TATravelOptionCell									: UITableViewCell {
 		return "\(totalTimeInMinutes) min"
 	}
 
-	fileprivate func rangeOfTimeToShow() -> String? {
+	fileprivate func rangeOfTimeToShow(travel: Travel?) -> String? {
 		guard
-			let firstSegment = self.travel?.segments.first,
-			let lastSegment = self.travel?.segments.last,
+			let firstSegment = travel?.segments.first,
+			let lastSegment = travel?.segments.last,
 			let firstStop = firstSegment.stops.first,
 			let lastStop = lastSegment.stops.last else {
 				return nil
@@ -73,9 +68,9 @@ class TATravelOptionCell									: UITableViewCell {
 
 	// MARK: - Showing views for segments
 
-	fileprivate func showNeededSegmentViews() {
+	fileprivate func showNeededSegmentViews(travel: Travel?) {
 
-		let segmentFiltered = self.travel?.segments.filter({ (segment: Segment) -> Bool in
+		let segmentFiltered = travel?.segments.filter({ (segment: Segment) -> Bool in
 			return (segment.travelMode != JSONKeys.change.rawValue && segment.travelMode != JSONKeys.setup.rawValue && segment.travelMode != JSONKeys.parking.rawValue)
 		})
 
@@ -100,6 +95,6 @@ class TATravelOptionCell									: UITableViewCell {
 extension Date {
 	/// Returns the amount of minutes from another date
 	func minutes(from date: Date) -> Int {
-		return Calendar.current.dateComponents([.minute], from: date, to: self).minute ?? 0
+		return (Calendar.current.dateComponents([.minute], from: date, to: self).minute ?? 0)
 	}
 }

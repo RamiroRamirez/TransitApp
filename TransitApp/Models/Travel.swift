@@ -8,6 +8,22 @@
 
 import Foundation
 
+/*
+	======= TRAVEL =======
+	
+	This struct represents one option route to go from one point to another.
+	The parameters for this model are:
+		
+		* type 		: what kind of route is this option (public transportation or car sharing etc)
+		* provider	: Who is providing this service/infos
+		* price		: If there is a cost for this travel
+		* segments	: The parts of this route (including stops, walking parts, setup from any service)
+		* properties: Some Properties to be considered.  
+
+	-------+++IMPORTANT++++-------
+		In this example, the properties are not being considered  
+
+*/
 struct Travel {
 
 	let type		: String
