@@ -8,6 +8,25 @@
 
 import Foundation
 
+/*
+	======= SEGMENT =======
+
+	This struct represents one option route to go from one point to another.
+	The parameters for this model are:
+
+		* name 			: name og segment, if there is some
+		* numberStops	: stops during this segment
+		* travelMode	: what kind of transportation is considered to have this segment
+		* description	: some description about the travel mode
+		* color			: Color to use in UI
+		* iconURL		: ---
+		* polyline		: route to be printed in map
+		* stops			: stops during this segment
+
+-------+++IMPORTANT++++-------
+In this example, the properties are not being considered
+
+*/
 struct Segment {
 
 	let name		: String?

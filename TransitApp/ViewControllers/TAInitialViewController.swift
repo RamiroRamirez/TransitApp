@@ -32,6 +32,10 @@ class TAInitialViewController											: UIViewController {
 		self.addTapRecognizer()
 	}
 
+	override var preferredStatusBarStyle: UIStatusBarStyle {
+		return .lightContent
+	}
+
 	// MARK: - General Helpers
 
 	fileprivate func addTapRecognizer() {

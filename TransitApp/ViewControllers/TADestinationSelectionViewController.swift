@@ -85,6 +85,7 @@ class TADestinationSelectionViewController		: UIViewController {
 	override func viewDidLoad() {
 		super.viewDidLoad()
 
+		self.searchParametersDictionary[SearchParametersKeys.Start] = DestinationSelectionOption.start.deafaulText()
 		self.tableView?.isScrollEnabled = false
 		self.tableView?.register(UINib(nibName: NibNames.DestinationSelectionCell, bundle: nil), forCellReuseIdentifier: CellIdentifiers.startSelection.rawValue)
 	}

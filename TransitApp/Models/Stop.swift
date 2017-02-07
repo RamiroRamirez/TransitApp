@@ -9,6 +9,23 @@
 import Foundation
 import DKHelper
 
+
+/*
+	======= STOP =======
+
+	This struct represents one option route to go from one point to another.
+	The parameters for this model are:
+
+		* latitude 	: latitude of the stop point
+		* longitude	: longitude of the stop point
+		* dateTime	: time of the stop point
+		* name		: name of the stop, if there is one
+		* properties: Some Properties to be considered.
+
+		-------+++IMPORTANT++++-------
+		In this example, the properties are not being considered
+
+*/
 struct Stop {
 
 	let latitude	: Double

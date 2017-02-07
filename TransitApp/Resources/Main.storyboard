@@ -12,7 +12,7 @@
         <!--Navigation Controller-->
         <scene sceneID="1ha-iU-zge">
             <objects>
-                <navigationController id="MEQ-xj-P7n" sceneMemberID="viewController">
+                <navigationController id="MEQ-xj-P7n" customClass="TANavigationController" customModule="TransitApp" customModuleProvider="target" sceneMemberID="viewController">
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="UY0-vp-icz">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>

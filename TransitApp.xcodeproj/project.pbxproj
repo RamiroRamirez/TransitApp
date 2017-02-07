@@ -21,7 +21,6 @@
 		281C0C4F1E42B6AA0006F9C0 /* TADestinationSelectionCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 281C0C4D1E42B6AA0006F9C0 /* TADestinationSelectionCell.xib */; };
 		281C0C511E42BD2B0006F9C0 /* TAInitialViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 281C0C501E42BD2B0006F9C0 /* TAInitialViewController.swift */; };
 		285844FD1E464A3100FC1CFA /* SummaryOptions.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 285844FC1E464A3100FC1CFA /* SummaryOptions.storyboard */; };
-		285845011E464AE500FC1CFA /* TATravelOptionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 285844FF1E464AE500FC1CFA /* TATravelOptionCell.swift */; };
 		285845021E464AE500FC1CFA /* TATravelOptionCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 285845001E464AE500FC1CFA /* TATravelOptionCell.xib */; };
 		285845041E464F4B00FC1CFA /* TASummaryOptionsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 285845031E464F4B00FC1CFA /* TASummaryOptionsViewController.swift */; };
 		285845071E4763F700FC1CFA /* Travel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 285845061E4763F700FC1CFA /* Travel.swift */; };
@@ -37,7 +36,10 @@
 		2858451D1E47FF8D00FC1CFA /* TARouteCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2858451B1E47FF8D00FC1CFA /* TARouteCell.swift */; };
 		2858451E1E47FF8D00FC1CFA /* TARouteCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2858451C1E47FF8D00FC1CFA /* TARouteCell.xib */; };
 		285845261E48031400FC1CFA /* TATravelDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 285845251E48031400FC1CFA /* TATravelDetailViewController.swift */; };
+		287CAEB71E4A6B2300459FBB /* TANavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 287CAEB61E4A6B2300459FBB /* TANavigationController.swift */; };
+		287CAEB91E4A7AA000459FBB /* TATravelOptionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 285844FF1E464AE500FC1CFA /* TATravelOptionCell.swift */; };
 		28F0DAA31E43B9C5003CC0D3 /* TADatePickerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28F0DAA21E43B9C5003CC0D3 /* TADatePickerViewController.swift */; };
+		4A74F7AE93D1B90EDCEA458E /* Pods_TransitAppTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BE1317442D2FA1A4A8FE7C4B /* Pods_TransitAppTests.framework */; };
 		FCCC468D8D65C103815E18CB /* Pods_TransitApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 130B0B1465AFA00AE7D09EEA /* Pods_TransitApp.framework */; };
 /* End PBXBuildFile section */
 
@@ -87,8 +89,12 @@
 		2858451B1E47FF8D00FC1CFA /* TARouteCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TARouteCell.swift; sourceTree = "<group>"; };
 		2858451C1E47FF8D00FC1CFA /* TARouteCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TARouteCell.xib; sourceTree = "<group>"; };
 		285845251E48031400FC1CFA /* TATravelDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TATravelDetailViewController.swift; sourceTree = "<group>"; };
+		287CAEB61E4A6B2300459FBB /* TANavigationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TANavigationController.swift; sourceTree = "<group>"; };
 		28F0DAA21E43B9C5003CC0D3 /* TADatePickerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TADatePickerViewController.swift; sourceTree = "<group>"; };
+		2A4E0194FEB9E0E3BD25C458 /* Pods-TransitAppTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TransitAppTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-TransitAppTests/Pods-TransitAppTests.release.xcconfig"; sourceTree = "<group>"; };
 		4F43FEADED1C77C814CDF7A9 /* Pods-TransitApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TransitApp.debug.xcconfig"; path = "Pods/Target Support Files/Pods-TransitApp/Pods-TransitApp.debug.xcconfig"; sourceTree = "<group>"; };
+		BAEE6E474A8A544819035085 /* Pods-TransitAppTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TransitAppTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-TransitAppTests/Pods-TransitAppTests.debug.xcconfig"; sourceTree = "<group>"; };
+		BE1317442D2FA1A4A8FE7C4B /* Pods_TransitAppTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TransitAppTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D34749BA02E0974111D31C55 /* Pods-TransitApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TransitApp.release.xcconfig"; path = "Pods/Target Support Files/Pods-TransitApp/Pods-TransitApp.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -106,6 +112,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4A74F7AE93D1B90EDCEA458E /* Pods_TransitAppTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -177,6 +184,7 @@
 		281C0C351E42A5640006F9C0 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				287CAEB61E4A6B2300459FBB /* TANavigationController.swift */,
 				281C0C501E42BD2B0006F9C0 /* TAInitialViewController.swift */,
 				281C0C431E42B0CB0006F9C0 /* TADestinationSelectionViewController.swift */,
 				28F0DAA21E43B9C5003CC0D3 /* TADatePickerViewController.swift */,
@@ -247,6 +255,7 @@
 			children = (
 				281C0C3F1E42A9790006F9C0 /* MapKit.framework */,
 				130B0B1465AFA00AE7D09EEA /* Pods_TransitApp.framework */,
+				BE1317442D2FA1A4A8FE7C4B /* Pods_TransitAppTests.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -256,6 +265,8 @@
 			children = (
 				4F43FEADED1C77C814CDF7A9 /* Pods-TransitApp.debug.xcconfig */,
 				D34749BA02E0974111D31C55 /* Pods-TransitApp.release.xcconfig */,
+				BAEE6E474A8A544819035085 /* Pods-TransitAppTests.debug.xcconfig */,
+				2A4E0194FEB9E0E3BD25C458 /* Pods-TransitAppTests.release.xcconfig */,
 			);
 			name = Pods;
 			sourceTree = "<group>";
@@ -287,9 +298,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 281C0C301E4279760006F9C0 /* Build configuration list for PBXNativeTarget "TransitAppTests" */;
 			buildPhases = (
+				12A2552A5D1EC6202DCD9C2E /* [CP] Check Pods Manifest.lock */,
 				281C0C201E4279760006F9C0 /* Sources */,
 				281C0C211E4279760006F9C0 /* Frameworks */,
 				281C0C221E4279760006F9C0 /* Resources */,
+				BDF1DC8720F6C68B67A792E3 /* [CP] Embed Pods Frameworks */,
+				E79078B90DDD1E7383610F1C /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -373,6 +387,21 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		12A2552A5D1EC6202DCD9C2E /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
 		28D9DD6E4A17B741C4549D3F /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -403,6 +432,21 @@
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-TransitApp/Pods-TransitApp-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
+		BDF1DC8720F6C68B67A792E3 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-TransitAppTests/Pods-TransitAppTests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 		E6199E6346E400AB9137F0D2 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -418,6 +462,21 @@
 			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
+		E79078B90DDD1E7383610F1C /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-TransitAppTests/Pods-TransitAppTests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -427,6 +486,7 @@
 			files = (
 				285845261E48031400FC1CFA /* TATravelDetailViewController.swift in Sources */,
 				2858451D1E47FF8D00FC1CFA /* TARouteCell.swift in Sources */,
+				287CAEB71E4A6B2300459FBB /* TANavigationController.swift in Sources */,
 				281C0C4E1E42B6AA0006F9C0 /* TADestinationSelectionCell.swift in Sources */,
 				281C0C141E4279760006F9C0 /* AppDelegate.swift in Sources */,
 				281C0C441E42B0CB0006F9C0 /* TADestinationSelectionViewController.swift in Sources */,
@@ -439,8 +499,8 @@
 				285845071E4763F700FC1CFA /* Travel.swift in Sources */,
 				285845111E47712200FC1CFA /* APIManager.swift in Sources */,
 				285845191E47FE4F00FC1CFA /* TAStopCell.swift in Sources */,
+				287CAEB91E4A7AA000459FBB /* TATravelOptionCell.swift in Sources */,
 				285845131E47C56500FC1CFA /* TASegmentView.swift in Sources */,
-				285845011E464AE500FC1CFA /* TATravelOptionCell.swift in Sources */,
 				281C0C511E42BD2B0006F9C0 /* TAInitialViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -587,6 +647,7 @@
 		};
 		281C0C311E4279760006F9C0 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = BAEE6E474A8A544819035085 /* Pods-TransitAppTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -602,6 +663,7 @@
 		};
 		281C0C321E4279760006F9C0 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 2A4E0194FEB9E0E3BD25C458 /* Pods-TransitAppTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";

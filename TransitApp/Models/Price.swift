@@ -8,6 +8,15 @@
 
 import Foundation
 
+/*
+	======= Price =======
+
+	This struct represents the price of a travel/route.
+	The parameters for this model are:
+
+		* amount 		: What is the cost for the travel?
+		* currency		: the currency of the amount
+*/
 struct Price {
 
 	let amount	: Double

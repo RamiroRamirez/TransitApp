@@ -13,6 +13,10 @@ target 'TransitApp' do
 	corePods
 end
 
+target 'TransitAppTests' do
+	corePods
+end
+
 post_install do |installer|
 
 	installer.pods_project.targets.each do |target|
