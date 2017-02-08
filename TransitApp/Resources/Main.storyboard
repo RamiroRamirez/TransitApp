@@ -38,7 +38,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="v6x-4v-bR7">
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" showsUserLocation="YES" translatesAutoresizingMaskIntoConstraints="NO" id="v6x-4v-bR7">
                                 <rect key="frame" x="0.0" y="64" width="375" height="603"/>
                             </mapView>
                             <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Xi1-Nh-qOB">
@@ -80,6 +80,7 @@
                         <outlet property="datePickerViewHeightConstraint" destination="qIW-ql-h3t" id="efh-OD-Z6n"/>
                         <outlet property="destinationSelectionView" destination="Jah-vB-LUb" id="3hA-QD-68x"/>
                         <outlet property="destinationSelectionViewHeightConstraint" destination="TWd-Xd-1nH" id="MRB-IV-DgE"/>
+                        <outlet property="mapView" destination="v6x-4v-bR7" id="SHM-KB-egM"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="OMo-9H-ftw" userLabel="First Responder" sceneMemberID="firstResponder"/>

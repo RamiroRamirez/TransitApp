@@ -8,6 +8,8 @@
 
 import UIKit
 import DKHelper
+import MapKit
+import CoreLocation
 
 class TAInitialViewController											: UIViewController {
 
@@ -17,20 +19,28 @@ class TAInitialViewController											: UIViewController {
 	@IBOutlet private weak var datePickerViewBottomConstraint			: NSLayoutConstraint?
 	@IBOutlet private weak var datePickerViewHeightConstraint			: NSLayoutConstraint?
 	@IBOutlet private weak var destinationSelectionViewHeightConstraint	: NSLayoutConstraint?
+	@IBOutlet weak var mapView									: MKMapView?
 
 	// MARK: - Properties
 
 	var destinationSelectionViewController								: TADestinationSelectionViewController?
 	var datePickerViewController										: TADatePickerViewController?
+	var locationManager													= CLLocationManager()
 
 	// MARK: - View Life Cycle
 
 	override func viewDidLoad() {
 		super.viewDidLoad()
 
+		self.locationManager.delegate = self
+		self.locationManager.desiredAccuracy = kCLLocationAccuracyBest
+		self.locationManager.requestWhenInUseAuthorization()
+		self.locationManager.startUpdatingLocation()
+
 		self.title = L("TransportApp")
 		self.destinationSelectionView?.alpha = AlphaForViews.DestinationSelectionView
 		self.addTapRecognizer()
+		self.mapView?.showsUserLocation = true
 	}
 
 	override var preferredStatusBarStyle: UIStatusBarStyle {
@@ -107,5 +117,20 @@ class TAInitialViewController											: UIViewController {
 				dateSelectionViewController.dateSelectedBlock = self.dateSelected
 				self.datePickerViewController = dateSelectionViewController
 		}
+	}
+}
+
+extension TAInitialViewController: CLLocationManagerDelegate {
+
+	func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
+		if let coordinate = locations.first?.coordinate {
+			self.mapView?.setCenter(coordinate, animated: true)
+			self.locationManager.stopUpdatingLocation()
+		}
+	}
+
+	func locationManager(_ manager: CLLocationManager, didFailWithError error: Error) {
+		// something went wong
+		// TODO: Implement some reaction/alert for the user
 	}
 }

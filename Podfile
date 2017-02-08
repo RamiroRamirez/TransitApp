@@ -7,6 +7,7 @@ use_frameworks!
 def corePods
 	pod 'DKHelper', '~> 2.2.3'
 	pod 'MBProgressHUD', '~> 1.0.0'
+	pod 'Polyline', '~> 4.0'
 end
 
 target 'TransitApp' do
