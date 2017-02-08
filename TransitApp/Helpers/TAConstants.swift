@@ -15,6 +15,7 @@ enum CellIdentifiers: String {
 	case stop									= "TAStopCell"
 	case route									= "TARouteCell"
 	case changeWalk								= "TAChangeWalkCell"
+	case mapCell								= "TAMapCell" 
 }
 
 enum SegueIdentifiers: String {
@@ -64,6 +65,7 @@ struct CellHeights {
 	static let TravelOption						= CGFloat(170)
 	static let Route							= CGFloat(120)
 	static let Stop								= CGFloat(19)
+	static let Map								= CGFloat(465)
 }
 
 struct NibNames {
@@ -72,6 +74,7 @@ struct NibNames {
 	static let StopCell							= "TAStopCell"
 	static let RouteCell						= "TARouteCell"
 	static let ChangeWalkCell					= "TAChangeWalkCell"
+	static let MapCell							= "TAMapCell"
 }
 
 struct AlphaForViews {
@@ -103,6 +106,8 @@ struct GeneralHelpers {
 	static let AmountFactor						= Double(100)
 	static let CornerRadiusPointFactor			= CGFloat(0.5)
 	static let CornerRadiusBackgroundPointFactor = CGFloat(0.25)
+	static let LatitudeLongitudeDelta			= Double(0.05)
+	static let PolylineWidth					= CGFloat(4)
 }
 
 struct DateFormats {

@@ -30,6 +30,7 @@ class TATravelDetailViewController			: UIViewController {
 		self.tableView?.register(UINib(nibName: NibNames.StopCell, bundle: nil), forCellReuseIdentifier: CellIdentifiers.stop.rawValue)
 		self.tableView?.register(UINib(nibName: NibNames.RouteCell, bundle: nil), forCellReuseIdentifier: CellIdentifiers.route.rawValue)
 		self.tableView?.register(UINib(nibName: NibNames.ChangeWalkCell, bundle: nil), forCellReuseIdentifier: CellIdentifiers.changeWalk.rawValue)
+		self.tableView?.register(UINib(nibName: NibNames.MapCell, bundle: nil), forCellReuseIdentifier: CellIdentifiers.mapCell.rawValue)
 		self.fillDataSources()
 		self.tableView?.reloadData()
 	}
@@ -66,8 +67,9 @@ class TATravelDetailViewController			: UIViewController {
 	}
 
 	fileprivate func numberOfRowsForTableView() -> Int {
-		// plus one to include first cell where segments and prices are included
-		return ((self.filteredStopsToShow?.count ?? 0) + (self.filteredSegmentsToShow?.count ?? 0) + 1)
+		// Wait! why +2
+		// to include first cell, where segments and prices are included, and the last row where the map is being shown
+		return ((self.filteredStopsToShow?.count ?? 0) + (self.filteredSegmentsToShow?.count ?? 0) + 2)
 	}
 }
 
@@ -116,7 +118,7 @@ extension TATravelDetailViewController		: UITableViewDelegate, UITableViewDataSo
 
 			For this reason, "Int((Double(indexPath.row - 1) * 0.5))" needs to be done
 			*/
-		} else if
+		} else if (indexPath.row != (self.numberOfRowsForTableView() - 1)),
 			let cell = tableView.dequeueReusableCell(withIdentifier: CellIdentifiers.stop.rawValue) as? TAStopCell,
 			let stop = self.filteredStopsToShow?[safe: Int((Double(indexPath.row - 1) * 0.5))] {
 
@@ -128,11 +130,17 @@ extension TATravelDetailViewController		: UITableViewDelegate, UITableViewDataSo
 				}).first {
 
 					let isIndexPathToHideUp = (indexPath.row == 1)
-					let isIndexPathToHideDown = (indexPath.row == (self.numberOfRowsForTableView() - 1))
+					let isIndexPathToHideDown = (indexPath.row == (self.numberOfRowsForTableView() - 2))
 					cell.setupCell(stop: stop, segment: segementArray, hideBackgroundPoint: (isIndexPathToHideUp, isIndexPathToHideDown))
 					cell.selectionStyle = .none
 					return cell
 			}
+
+		} else if
+			let cell = tableView.dequeueReusableCell(withIdentifier: CellIdentifiers.mapCell.rawValue) as? TAMapCell,
+			let _filteredSegmentsToShow = self.filteredSegmentsToShow {
+				cell.setupCell(segments: _filteredSegmentsToShow)
+				return cell
 		}
 
 		return UITableViewCell()
@@ -141,6 +149,9 @@ extension TATravelDetailViewController		: UITableViewDelegate, UITableViewDataSo
 	func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
 		if (indexPath.row == 0) {
 			return CellHeights.TravelOption
+
+		} else if (indexPath.row == (self.numberOfRowsForTableView() - 1)) {
+			return CellHeights.Map
 
 		// Segment cells are in even rows
 		} else if (indexPath.row % 2 == 0) {
