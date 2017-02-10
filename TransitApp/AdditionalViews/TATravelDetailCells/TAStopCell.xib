@@ -17,7 +17,7 @@
             <rect key="frame" x="0.0" y="0.0" width="320" height="20"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
-                <rect key="frame" x="0.0" y="0.0" width="320" height="19.5"/>
+                <rect key="frame" x="0.0" y="0.0" width="320" height="19"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1t1-Pt-hHJ">
@@ -38,7 +38,7 @@
                         </constraints>
                     </view>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="A8h-ow-csK">
-                        <rect key="frame" x="130" y="0.0" width="37.5" height="19"/>
+                        <rect key="frame" x="130" y="0.0" width="182" height="19"/>
                         <fontDescription key="fontDescription" type="system" pointSize="15"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
@@ -70,6 +70,7 @@
                     <constraint firstItem="rOU-4l-zcC" firstAttribute="centerX" secondItem="SdT-jw-kdf" secondAttribute="centerX" id="e4E-Zi-hUH"/>
                     <constraint firstItem="1t1-Pt-hHJ" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="iqC-J5-rYr"/>
                     <constraint firstItem="A8h-ow-csK" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="oCJ-78-QeB"/>
+                    <constraint firstAttribute="trailing" secondItem="A8h-ow-csK" secondAttribute="trailing" constant="8" id="oTA-JY-HhH"/>
                     <constraint firstAttribute="bottom" secondItem="SdT-jw-kdf" secondAttribute="bottom" id="wdh-xE-XhT"/>
                     <constraint firstItem="SdT-jw-kdf" firstAttribute="leading" secondItem="1t1-Pt-hHJ" secondAttribute="trailing" constant="10" id="yyK-zM-ctP"/>
                 </constraints>
